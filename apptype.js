@@ -120,7 +120,7 @@ function observe() {
 
   var wavesurfer = [];
 
-  const createAudio = (id, url) => {
+  var createAudio = (id, url) => {
     //var container = document.querySelector("typebot-standard").shadowRoot.getElementById(id)
     //const targets = document.querySelectorAll('[id^="audio"]');
     //container = document.getElementById(id)
@@ -132,7 +132,7 @@ function observe() {
       waveColor: '#4F4A85',
       progressColor: '#383351',
       barHeight: 0.5,
-        cursorWidth: 0,
+        cursorWidth: 2,
         barWidth: 3,
         width: 220,
         height: 40,
