@@ -133,7 +133,7 @@ function observe() {
       waveColor: "#e7e8e9",
       progressColor: "#8696a0",
       url : url,
-      barHeight: 1,
+      /*barHeight: 1,
       barWidth: 0.1,
       cursorWidth: 0,
       barWidth: 5,
@@ -142,7 +142,7 @@ function observe() {
       responsive: true,
       normalize: true,
       hideScrollbar: true,
-      barRadius: 3,
+      barRadius: 3,*/
  
     });
     
