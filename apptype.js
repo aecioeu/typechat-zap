@@ -125,22 +125,22 @@ function observe() {
     //const targets = document.querySelectorAll('[id^="audio"]');
     //container = document.getElementById(id)
     var container = document.querySelector("typebot-standard").shadowRoot.getElementById(id)
-    container.setAttribute("style","width:240px");
+    container.setAttribute("style","width:220px");
 
     wavesurfer[id] = WaveSurfer.create({
       container: container,
-      waveColor: '#4F4A85',
-      progressColor: '#383351',
-      barHeight: 0.5,
-        cursorWidth: 0,
-        barWidth: 3,
-        width: 220,
-        height: 40,
-        responsive: true,
-        normalize: true,
-        hideScrollbar: true,
-        barRadius: 3,
-        backend: "MediaElement"
+      waveColor: '#e7e8e9',
+      progressColor: '#8696a0',
+      barHeight: 1,
+      barWidth: 0.1,
+      cursorWidth: 0,
+      barWidth: 5,
+      width: 220,
+      height: 40,
+      responsive: true,
+      normalize: true,
+      hideScrollbar: true,
+      barRadius: 3
  
     });
 
