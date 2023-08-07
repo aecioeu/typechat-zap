@@ -150,12 +150,14 @@ if ($(this).attr("plaing") && $(this).attr("plaing") == 'true') {
         barWidth: 0.1,
         cursorWidth: 0,
         barWidth: 5,
-        width: 220,
-        height: 40,
+        width: 200,
+        height: 24,
         responsive: true,
         normalize: true,
-        hideScrollbar: true,
+        hideScrollbar: false,
         barRadius: 3,
+        barGap: 0.5,
+        autoplay : true
         /*barHeight: 0.5,
         cursorWidth: 0,
         barWidth: 3,
@@ -183,6 +185,22 @@ if ($(this).attr("plaing") && $(this).attr("plaing") == 'true') {
 
 
 <style>
+
+.cursor {
+    background-color: #53bdeb !important;
+    width: 9px !important;
+    height: 9px !important;
+    border-radius: 50px !important;
+    pointer-events: none;
+    position: absolute;
+    z-index: 5;
+    margin-right: -7px !important;
+    top: 7px;
+    /* left: 1px !important; */
+    height: 100%;
+    border-radius: 2px;
+}
+
   .flex-container {
     display: flex;
     justify-content: space-between;  
