@@ -84,6 +84,7 @@ function observe() {
 
               let id = randomId(5);
              // let container = (entry.target.closest("div").id = id);
+             // entry.target.remove()
               entry.target.closest("div").insertAdjacentHTML('beforeend', audioTemplate(id));
               let url = entry.target.src;
 
@@ -120,7 +121,7 @@ function observe() {
 
   var wavesurfer = [];
 
-  const createAudio = (id, url) => {
+  var createAudio = (id, url) => {
     //var container = document.querySelector("typebot-standard").shadowRoot.getElementById(id)
     //const targets = document.querySelectorAll('[id^="audio"]');
     //container = document.getElementById(id)
@@ -129,8 +130,9 @@ function observe() {
 
     wavesurfer[id] = WaveSurfer.create({
       container: container,
-      waveColor: '#e7e8e9',
-      progressColor: '#8696a0',
+      waveColor: "#e7e8e9",
+      progressColor: "#8696a0",
+      url : url,
       barHeight: 1,
       barWidth: 0.1,
       cursorWidth: 0,
@@ -143,15 +145,7 @@ function observe() {
       barRadius: 3
  
     });
-
-    wavesurfer[id].drawBuffer();
-
-    //wavesurfer[id].load(url)
-   
-    wavesurfer[id].load(url, null, 'metadata')
-    wavesurfer[id].on("load", function (e) {
-      console.warn(e);
-    });
+    
     //window['audio' + id].init()
     return wavesurfer[id];
   };
