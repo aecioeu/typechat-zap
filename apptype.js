@@ -21,19 +21,16 @@ const doubleCheckRead = `<svg style="color: #53bdeb;" viewBox="0 0 16 11" height
 function audioTemplate(id, file) {
 
  return `        
-<div class="flex-container" >
+<div class="flex-container">
    
-   <div class="item1">  
-    
+   <div class="player-button">  
     <div class="rounded-circle h24 player" player="${id}" >
      <!-- Play icon-->
-     <svg class="play" viewBox="0 0 34 34" height="34" width="34" preserveAspectRatio="xMidYMid meet" class="" version="1.1" x="0px" y="0px" enable-background="new 0 0 34 34" xml:space="preserve"><path fill="currentColor" d="M8.5,8.7c0-1.7,1.2-2.4,2.6-1.5l14.4,8.3c1.4,0.8,1.4,2.2,0,3l-14.4,8.3 c-1.4,0.8-2.6,0.2-2.6-1.5V8.7z"></path></svg></div>
- 
+     ${playIcon}
    </div>
-   <div class="item2" id="${id}"></div>
+   <div class="audio" id="${id}"></div>
 
-
-   <div class="item3"><a href="#" class="text-muted speed" speed="1.0" velocity=""> 1.0 x</a></div>
+   <div class="speed-button"><a href="#" class="text-muted speed" speed="1.0" velocity=""> 1.0 x</a></div>
 
 </div>
 </div>`
@@ -128,7 +125,7 @@ function observe() {
     //const targets = document.querySelectorAll('[id^="audio"]');
     //container = document.getElementById(id)
     var container = document.querySelector("typebot-standard").shadowRoot.getElementById(id)
-    container.setAttribute("style","width:290px");
+   // container.setAttribute("style","width:240px");
 
     wavesurfer[id] = WaveSurfer.create({
       container: container,
