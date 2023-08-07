@@ -134,6 +134,15 @@ function observe() {
       container: container,
       waveColor: '#4F4A85',
       progressColor: '#383351',
+      barHeight: 0.5,
+        cursorWidth: 0,
+        barWidth: 3,
+        width: 220,
+        height: 40,
+        responsive: true,
+        normalize: true,
+        hideScrollbar: true,
+        barRadius: 3
  
     });
 
