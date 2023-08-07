@@ -28,20 +28,16 @@ const doubleCheckRead = `<svg style="color: #53bdeb;" viewBox="0 0 16 11" height
 
 function audioTemplate(id, file) {
 
- return `        
-<div class="flex-container" >
+ return ` <div class="flex-container">
    
-   <div class="item1">  
-    
+   <div class="player-button">  
     <div class="rounded-circle h24 player" player="${id}" >
      <!-- Play icon-->
-     <svg class="play" viewBox="0 0 34 34" height="34" width="34" preserveAspectRatio="xMidYMid meet" class="" version="1.1" x="0px" y="0px" enable-background="new 0 0 34 34" xml:space="preserve"><path fill="currentColor" d="M8.5,8.7c0-1.7,1.2-2.4,2.6-1.5l14.4,8.3c1.4,0.8,1.4,2.2,0,3l-14.4,8.3 c-1.4,0.8-2.6,0.2-2.6-1.5V8.7z"></path></svg></div>
- 
+     ${playIcon}
    </div>
-   <div class="item2" id="${id}"></div>
+   <div class="audio" id="${id}"></div>
 
-
-   <div class="item3"><a href="#" class="text-muted speed" speed="1.0" velocity=""> 1.0 x</a></div>
+   <div class="speed-button"><a href="#" class="text-muted speed" speed="1.0" velocity=""> 1.0 x</a></div>
 
 </div>
 </div>`
@@ -194,6 +190,8 @@ if ($(this).attr("plaing") && $(this).attr("plaing") == 'true') {
     padding: 15px;
     gap: 5px;
     z-index: 99;
+    align-items: center;
+    justify-content: center;
 
   } 
 
@@ -203,9 +201,19 @@ if ($(this).attr("plaing") && $(this).attr("plaing") == 'true') {
     border-radius: 5px;
     padding: 8px;*/
   }
+  .speed-button{
+    min-width: 50px;
+  }
 
 .speed{
-    background: rgba(84,101,111,0.5);
+  background: rgba(84,101,111,0.5);
+    padding: 2px;
+    display: block;
+    font-weight: 500;
+    border-radius:50px;
+    color: #fff;
+    font-size: 0.8125rem;
+    text-align: center;
   }
 
   .audio { 

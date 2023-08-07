@@ -145,9 +145,7 @@ function observe() {
       barRadius: 3,
  
     });
-    wavesurfer[id].on("load", function (e) {
-      console.warn(e);
-    });
+    
     //window['audio' + id].init()
     return wavesurfer[id];
   };
