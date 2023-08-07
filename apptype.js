@@ -84,6 +84,7 @@ function observe() {
 
               let id = randomId(5);
              // let container = (entry.target.closest("div").id = id);
+              entry.target.remove()
               entry.target.closest("div").insertAdjacentHTML('beforeend', audioTemplate(id));
               let url = entry.target.src;
 
@@ -129,26 +130,21 @@ function observe() {
 
     wavesurfer[id] = WaveSurfer.create({
       container: container,
-      waveColor: '#4F4A85',
-      progressColor: '#383351',
-      barHeight: 0.5,
-        cursorWidth: 2,
-        barWidth: 3,
-        width: 220,
-        height: 40,
-        responsive: true,
-        normalize: true,
-        hideScrollbar: true,
-        barRadius: 3,
-        backend: "MediaElement"
+      waveColor: "#e7e8e9",
+      progressColor: "#8696a0",
+      url : url,
+      barHeight: 1,
+      barWidth: 0.1,
+      cursorWidth: 0,
+      barWidth: 5,
+      width: 220,
+      height: 40,
+      responsive: true,
+      normalize: true,
+      hideScrollbar: true,
+      barRadius: 3,
  
     });
-
-    wavesurfer[id].drawBuffer();
-
-    //wavesurfer[id].load(url)
-   
-    wavesurfer[id].load(url, null, 'metadata')
     wavesurfer[id].on("load", function (e) {
       console.warn(e);
     });

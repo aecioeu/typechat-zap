@@ -7,6 +7,7 @@
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+<script src="https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.min.js"></script>
 
   <script type="text/javascript">
 
@@ -146,8 +147,19 @@ if ($(this).attr("plaing") && $(this).attr("plaing") == 'true') {
 
       wavesurfer[id] = WaveSurfer.create({
         container: container,
-        waveColor: "#54656f57",
-        progressColor: "#54656fbf",
+        waveColor: "#e7e8e9",
+        progressColor: "#8696a0",
+        url : url,
+        barHeight: 1,
+        barWidth: 0.1,
+        cursorWidth: 0,
+        barWidth: 5,
+        width: 220,
+        height: 40,
+        responsive: true,
+        normalize: true,
+        hideScrollbar: true,
+        barRadius: 3,
         /*barHeight: 0.5,
         cursorWidth: 0,
         barWidth: 3,
@@ -160,11 +172,11 @@ if ($(this).attr("plaing") && $(this).attr("plaing") == 'true') {
         //backend: "MediaElement",
       });
 
-      wavesurfer[id].drawBuffer();
+      //wavesurfer[id].drawBuffer();
 
       //wavesurfer[id].load(url)
      
-      wavesurfer[id].load(url, null, 'metadata')
+      //wavesurfer[id].load(url, null, 'metadata')
       wavesurfer[id].on("load", function (e) {
         console.warn(e);
       });
