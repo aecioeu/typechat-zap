@@ -125,7 +125,7 @@ function observe() {
     //const targets = document.querySelectorAll('[id^="audio"]');
     //container = document.getElementById(id)
     var container = document.querySelector("typebot-standard").shadowRoot.getElementById(id)
-   // container.setAttribute("style","width:240px");
+    container.setAttribute("style","width:220px");
 
     wavesurfer[id] = WaveSurfer.create({
       container: container,
