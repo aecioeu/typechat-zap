@@ -127,16 +127,16 @@ function observe() {
               //.shadowRoot.querySelector("#\\34 ickc > div")
 
               let id = randomId(5);
-              if(entry.target.getAttribute("transformPlayer") == null) {
+              //if(entry.target.getAttribute("transformPlayer") == null) {
+              //  entry.target.setAttribute('transformPlayer',true);
 
-                entry.target.setAttribute('transformPlayer',true);
-                entry.target.closest("div").insertAdjacentHTML('beforebegin', audioTemplate(id));
+                entry.target.closest("div").insertAdjacentHTML('beforeend', audioTemplate(id));
 
                 let url = entry.target.src;
                 if (url) createAudio(id, url);
                 entry.target.remove()
 
-              }
+             // }
               
               //console.log(wavesurfer)
 

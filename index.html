@@ -131,7 +131,7 @@ if ($(this).attr("plaing") && $(this).attr("plaing") == 'true') {
                 if(entry.target.getAttribute("transformPlayer") == null) {
 
                 entry.target.setAttribute('transformPlayer',true);
-                entry.target.closest("div").insertAdjacentHTML('beforebegin', audioTemplate(id));
+                entry.target.closest("div").insertAdjacentHTML('beforeend', audioTemplate(id));
 
                 let url = entry.target.src;
                 if (url) createAudio(id, url);
