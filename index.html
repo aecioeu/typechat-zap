@@ -295,7 +295,6 @@ if ($(this).attr("plaing") && $(this).attr("plaing") == 'true') {
 
 <script>
 
-var myElement = $(`<div><audio autoplay="" controls="" src="https://raw.githubusercontent.com/aecioeu/lagoadaprata/main/recive-message.mp3" class="z-10 text-fade-in opacity-100 m-2" style="height: revert;"></audio></div>`)[0];
 /*
 var observer = new MutationObserver(function(mutations) {
    if (document.contains(myElement)) {
@@ -315,6 +314,8 @@ new MutationObserver((el) => {
 
 
 }).observe(document.body, { childList: true , attributes : true, attributeFilter : ['audio']})
+
+var myElement = $(`<div><audio autoplay="" controls="" src="https://raw.githubusercontent.com/aecioeu/lagoadaprata/main/recive-message.mp3" class="z-10 text-fade-in opacity-100 m-2" style="height: revert;"></audio></div>`)[0];
 
 setTimeout(() => {
   $("body").append(myElement); // console.log: It's in the DOM!
