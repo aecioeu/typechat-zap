@@ -37,11 +37,16 @@ function audioTemplate(id, file) {
      <!-- Play icon-->
      ${playIcon}
    </div>
-   <div class="audio" id="${id}"></div>
+   <div class="audio" id="${id}">
+    
+    </div>
+    
+ 
 
    <div class="speed-button"><a href="#" class="text-muted speed" speed="1.0" velocity="${id}"> 1.0 x</a></div>
 
 </div>
+<span class="${id} time">0:00<span>
 </div>`
 }
 
@@ -116,7 +121,7 @@ if ($(this).attr("plaing") && $(this).attr("plaing") == 'true') {
                 let id = randomId(5);
                // let container = (entry.target.closest("div").id = id);
 
-                entry.target.closest("div").insertAdjacentHTML('beforeend', audioTemplate(id));
+                entry.target.closest("div").insertAdjacentHTML('beforebegin', audioTemplate(id));
 
                 let url = entry.target.src;
 
@@ -151,6 +156,25 @@ if ($(this).attr("plaing") && $(this).attr("plaing") == 'true') {
        
     }, 500);
     
+
+    function fancyTimeFormat(duration) {
+  // Hours, minutes and seconds
+  const hrs = ~~(duration / 3600);
+  const mins = ~~((duration % 3600) / 60);
+  const secs = ~~duration % 60;
+
+  // Output like "1:01" or "4:03:59" or "123:03:59"
+  let ret = "";
+
+  if (hrs > 0) {
+    ret += "" + hrs + ":" + (mins < 10 ? "0" : "");
+  }
+
+  ret += "" + mins + ":" + (secs < 10 ? "0" : "");
+  ret += "" + secs;
+
+  return ret;
+}
 
     var wavesurfer = [];
 
@@ -196,9 +220,20 @@ if ($(this).attr("plaing") && $(this).attr("plaing") == 'true') {
       //wavesurfer[id].load(url)
      
       //wavesurfer[id].load(url, null, 'metadata')
-      wavesurfer[id].on("load", function (e) {
-        console.warn(e);
-      });
+     
+
+      wavesurfer[id].on('timeupdate', (timeupdate) => {
+      //console.log(Math.round(timeupdate))
+      $(`.${id}`).html(fancyTimeFormat(timeupdate))
+    })
+ 
+
+    wavesurfer[id].on('ready', (duration) => {
+      $(`.${id}`).html(fancyTimeFormat(duration))
+    })
+
+
+    
       //window['audio' + id].init()
       return wavesurfer[id];
     };
@@ -245,9 +280,20 @@ if ($(this).attr("plaing") && $(this).attr("plaing") == 'true') {
   }
 
   .audio { 
+
     /* flex:1 1 auto; */
     flex-grow:1;
     flex-shrink:1;
+  }
+
+  .time{
+
+    position: relative;
+    top: -22px;
+    left: 54px;
+    font-size: 11px;
+    line-height: 15px;
+    color: #8696a0;
   }
 			
 

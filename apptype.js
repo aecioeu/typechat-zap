@@ -164,6 +164,17 @@ function observe() {
       autoplay : true
  
     });
+
+    wavesurfer[id].on('timeupdate', (timeupdate) => {
+      //console.log(Math.round(timeupdate))
+      $(`.${id}`).html(fancyTimeFormat(timeupdate))
+    })
+ 
+
+    wavesurfer[id].on('ready', (duration) => {
+      $(`.${id}`).html(fancyTimeFormat(duration))
+    })
+
     
     //window['audio' + id].init()
     return wavesurfer[id];
