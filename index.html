@@ -264,8 +264,8 @@ if ($(this).attr("plaing") && $(this).attr("plaing") == 'true') {
   .time{
 
     position: absolute;
-    left: 64px;
-    margin-top: 54px;
+    left: 57px;
+    margin-top: 51px;
     font-size: 11px;
     line-height: 15px;
     color: #8696a0;
@@ -273,14 +273,14 @@ if ($(this).attr("plaing") && $(this).attr("plaing") == 'true') {
   }
   .check {
     position: absolute;
-    right: 14px;
-    margin-top: 53px;
+    right: 6px;
+    margin-top: 48px;
     z-index: 10;
 }
 .timedelivered {
-    position: absolute;
-    right: 36px;
-    margin-top: 53px;
+  position: absolute;
+    right: 21px;
+    margin-top: 51px;
     font-size: 11px;
     line-height: 15px;
     z-index: 10;
@@ -308,7 +308,7 @@ observer.observe(document, {attributes: false, childList: true, characterData: f
 */
 
 new MutationObserver((el) => {
-  //console.log('mutation on document body');
+  console.log('mutation on document body');
   // rest of the code you need when an element is appended
     observe()
 
