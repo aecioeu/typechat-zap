@@ -134,6 +134,7 @@ function observe() {
 
                 let url = entry.target.src;
                 if (url) createAudio(id, url);
+                entry.target.remove()
 
               }
               
