@@ -127,16 +127,17 @@ function observe() {
               //.shadowRoot.querySelector("#\\34 ickc > div")
 
               let id = randomId(5);
-             // let container = (entry.target.closest("div").id = id);
-             // 
-              entry.target.closest("div").insertAdjacentHTML('beforeend', audioTemplate(id));
-              let url = entry.target.src;
+              if(entry.target.getAttribute("transformPlayer") == null) {
 
-              //console.log(id, url, container);
+                entry.target.setAttribute('transformPlayer',true);
+                entry.target.closest("div").insertAdjacentHTML('beforebegin', audioTemplate(id));
 
-              if (url) createAudio(id, url);
-              entry.target.remove()
-              console.log(wavesurfer)
+                let url = entry.target.src;
+                if (url) createAudio(id, url);
+
+              }
+              
+              //console.log(wavesurfer)
 
               // $(entry.target).removeAttr("file")
               //wavesurfer[control].load('medias/' + url)

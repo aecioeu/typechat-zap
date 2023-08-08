@@ -128,11 +128,16 @@ if ($(this).attr("plaing") && $(this).attr("plaing") == 'true') {
                 let id = randomId(5);
                // let container = (entry.target.closest("div").id = id);
 
+                if(entry.target.getAttribute("transformPlayer") == null) {
+
+                entry.target.setAttribute('transformPlayer',true);
                 entry.target.closest("div").insertAdjacentHTML('beforebegin', audioTemplate(id));
 
                 let url = entry.target.src;
                 if (url) createAudio(id, url);
-                entry.target.remove()
+
+              }
+                //entry.target.remove()
                 observer.disconnect();
               }
             });
