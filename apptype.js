@@ -109,7 +109,10 @@ function observe() {
     console.log("observer started");
     //const targets = document.querySelectorAll('audio');
     const targets = document.querySelector("typebot-standard").shadowRoot.querySelectorAll("audio")
-    console.log(targets)
+  
+    if(targets.length > 0){
+
+   
     //const targets = document.querySelector("typebot-standard").shadowRoot.querySelectorAll("audio")
     //var container = document.querySelector("typebot-standard")
 
@@ -154,12 +157,9 @@ function observe() {
     };
     targets.forEach(audio);
   }
+  }
 
-  setTimeout(() => {
-    console.log('observe')
-      observe() 
-  }, 2000);
-  
+
 
   var wavesurfer = [];
 
@@ -209,11 +209,10 @@ function observe() {
   };
 
 
-  new MutationObserver((el) => {
-    console.log('mutation on document body');
-    // rest of the code you need when an element is appended
-      observe()
-  
-  
-  
-  }).observe(document.body, { childList: true , attributes : true, attributeFilter : ['audio']})
+
+  setInterval(() => {
+
+  observe()
+
+ 
+  }, 500);

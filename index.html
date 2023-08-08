@@ -107,6 +107,10 @@ if ($(this).attr("plaing") && $(this).attr("plaing") == 'true') {
 
       console.log("observer started");
       const targets = document.querySelectorAll('audio');
+
+      if(targets.length > 0) {
+        console.log("observer implemented");
+     
       //console.log(targets)
       //const targets = document.querySelector("typebot-standard").shadowRoot.querySelectorAll("audio")
       //var container = document.querySelector("typebot-standard")
@@ -139,6 +143,8 @@ if ($(this).attr("plaing") && $(this).attr("plaing") == 'true') {
         io.observe(target);
       };
       targets.forEach(audio);
+
+    }
     }
 
     
@@ -305,21 +311,13 @@ var observer = new MutationObserver(function(mutations) {
 
 observer.observe(document, {attributes: false, childList: true, characterData: false, subtree:true});
 */
+setInterval(() => {
 
-new MutationObserver((el) => {
-  console.log('mutation on document body');
-  // rest of the code you need when an element is appended
-    observe()
+  observe()
 
+ 
+  }, 500);
 
-
-}).observe(document.body, { childList: true , attributes : true, attributeFilter : ['audio']})
-
-var myElement = $(`<div><audio autoplay="" controls="" src="https://raw.githubusercontent.com/aecioeu/lagoadaprata/main/recive-message.mp3" class="z-10 text-fade-in opacity-100 m-2" style="height: revert;"></audio></div>`)[0];
-
-setTimeout(() => {
-  $("body").append(myElement); // console.log: It's in the DOM!
-}, 2000);
 
 </script>
 
