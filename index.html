@@ -212,17 +212,6 @@ if ($(this).attr("plaing") && $(this).attr("plaing") == 'true') {
       //window['audio' + id].init()
       return wavesurfer[id];
     };
-
-
-    new MutationObserver((el) => {
-  //console.log('mutation on document body');
-  // rest of the code you need when an element is appended
-    observe()
-
-
-
-}).observe(document.body, { childList: true , attributes : true, attributeFilter : ['audio']})
-
   </script>
 
 
@@ -318,7 +307,14 @@ var observer = new MutationObserver(function(mutations) {
 observer.observe(document, {attributes: false, childList: true, characterData: false, subtree:true});
 */
 
+new MutationObserver((el) => {
+  //console.log('mutation on document body');
+  // rest of the code you need when an element is appended
+    observe()
 
+
+
+}).observe(document.body, { childList: true , attributes : true, attributeFilter : ['audio']})
 
 setTimeout(() => {
   $("body").append(myElement); // console.log: It's in the DOM!
