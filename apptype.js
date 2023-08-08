@@ -216,4 +216,4 @@ function observe() {
   
   
   
-  }).observe(document.body, { childList: true })
+  }).observe(document.body, { childList: true , attributes : true, attributeFilter : ['audio']})
