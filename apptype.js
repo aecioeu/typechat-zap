@@ -100,13 +100,14 @@ function observe() {
 
               let id = randomId(5);
              // let container = (entry.target.closest("div").id = id);
-             // entry.target.remove()
+             // 
               entry.target.closest("div").insertAdjacentHTML('beforeend', audioTemplate(id));
               let url = entry.target.src;
 
               //console.log(id, url, container);
 
               if (url) createAudio(id, url);
+              entry.target.remove()
               console.log(wavesurfer)
 
               // $(entry.target).removeAttr("file")
