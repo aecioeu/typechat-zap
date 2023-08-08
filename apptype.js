@@ -30,11 +30,27 @@ function audioTemplate(id, file) {
    </div>
    <div class="audio" id="${id}"></div>
 
-   <div class="speed-button"><a href="#" class="text-muted speed" speed="1.0" velocity=""> 1.0 x</a></div>
+   <div class="speed-button"><a href="#" class="text-muted speed" speed="1.0" velocity="${id}"> 1.0 x</a></div>
 
 </div>
 </div>`
 }
+
+$(document).on('click', '.speed', async function(){ 
+
+
+  let id = $(this).attr("velocity")
+
+
+  let speed = parseFloat($(this).attr("speed"))
+  if (speed == 2) { speed = 1 }
+  else { speed = speed + 0.5 }
+
+  $(this).attr('speed', speed)
+  $(this).empty().html(`${speed.toFixed(1)} x`)
+
+  wavesurfer['audio-' + id].setPlaybackRate(speed)
+})
 
 $(document).on('click', '.player', async function(){ 
   //  alert("hey!");
