@@ -39,19 +39,24 @@ function fancyTimeFormat(duration) {
 
 function audioTemplate(id, file) {
 
- return `        
-<div class="flex-container">
+ return `<div class="flex-container">
    
-   <div class="player-button">  
-    <div class="rounded-circle h24 player" player="${id}" >
-     <!-- Play icon-->
-     ${playIcon}
-   </div>
-   <div class="audio" id="${id}"></div>
+ <div class="player-button">  
+  <div class="rounded-circle h24 player" player="${id}" >
+   <!-- Play icon-->
+   ${playIcon}
+ </div>
+ <div class="audio" id="${id}">
+  
+  </div>
+  
 
-   <div class="speed-button"><a href="#" class="text-muted speed" speed="1.0" velocity="${id}"> 1.0 x</a></div>
+
+ <div class="speed-button"><a href="#" class="text-muted speed" speed="1.0" velocity="${id}"> 1.0 x</a></div>
 
 </div>
+<span class="${id} time">0:00<span>
+<span class=" check"><span>
 </div>`
 }
 
