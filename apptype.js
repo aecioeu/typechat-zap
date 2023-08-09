@@ -128,7 +128,7 @@ function observe() {
 
               let id = randomId(5);
               //if(entry.target.getAttribute("transformPlayer") == null) {
-              //  entry.target.setAttribute('transformPlayer',true);
+               entry.target.setAttribute('transformPlayer',true);
 
                 entry.target.closest("div").insertAdjacentHTML('beforeend', audioTemplate(id));
 
@@ -195,14 +195,14 @@ function observe() {
     wavesurfer[id].on('timeupdate', (timeupdate) => {
       //console.log(Math.round(timeupdate))
       //$(`.${id}-time`).html(fancyTimeFormat(timeupdate))
-      var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`.${id}-check`)
+      var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`.${id}-time`)
       el.innerHTML = fancyTimeFormat(timeupdate)
 
     })
  
       wavesurfer[id].on('ready', (duration) => {
       //$(`.${id}-time`).html(fancyTimeFormat(duration))
-      var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`.${id}-check`)
+      var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`.${id}-time`)
       el.innerHTML = fancyTimeFormat(duration)
      })
 
