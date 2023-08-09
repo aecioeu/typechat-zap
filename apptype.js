@@ -124,8 +124,11 @@ function observe() {
               //.shadowRoot.querySelector("#\\34 ickc > div")
 
               let id = randomId(5);
-              //if(entry.target.getAttribute("transformPlayer") == null) {
-               entry.target.setAttribute('transformPlayer',true);
+               entry.target.setAttribute('transformPlayer',false);
+
+              if(entry.target.getAttribute("transformPlayer") == false) {
+
+                entry.target.setAttribute('transformPlayer',true);
 
                 entry.target.closest("div").insertAdjacentHTML('beforeend', audioTemplate(id));
 
@@ -133,7 +136,7 @@ function observe() {
                 if (url) createAudio(id, url);
                 entry.target.remove()
 
-             // }
+              }
               
               //console.log(wavesurfer)
 
@@ -174,17 +177,19 @@ function observe() {
       waveColor: "#e7e8e9",
       progressColor: "#8696a0",
       url : url,
+      // Set a bar width
+      barWidth: 3,
+      // Optionally, specify the spacing between bars
+      barGap: 2,
+      // And the bar radius
+      barRadius: 100,
       barHeight: 1,
-      barWidth: 0.1,
       cursorWidth: 0,
-      barWidth: 5,
       width: 200,
       height: 24,
       responsive: true,
       normalize: true,
       hideScrollbar: false,
-      barRadius: 3,
-      barGap: 0.5,
       autoplay : true
  
     });
@@ -220,3 +225,23 @@ function observe() {
 
  
   }, 500);
+
+
+
+
+  
+
+// First we select the element we want to target
+
+//var target =document.querySelector("typebot-standard").shadowRoot.querySelectorAll(`.bubble-typing`)
+
+var targetNode = document.querySelector("typebot-standard").shadowRoot.querySelector(`.bubble-typing`)
+var observer = new MutationObserver(function(el){
+  console.log(el)
+
+    if(targetNode.style.display != 'none'){
+      console.log('iajidkaosjf')
+        // doSomething
+    }
+});
+observer.observe(targetNode, { attributes: true, childList: true });
