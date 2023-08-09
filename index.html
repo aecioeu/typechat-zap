@@ -53,6 +53,12 @@ function audioTemplate(id, file) {
 </div>`
 }
 
+function messageTemplate(){
+
+  return `<div class="timedelivered-message">${(today.getHours()<10?'0':'') + today.getHours()}:${(today.getMinutes()<10?'0':'') + today.getMinutes()}</div>
+          <div class="check-message">${check}</div>`
+}
+
 $(document).on('click', '.speed', async function(){ 
 
 
@@ -298,6 +304,26 @@ if ($(this).attr("plaing") && $(this).attr("plaing") == 'true') {
     color: #8696a0;
 }
 			
+
+.typebot-host-bubble {
+    padding-bottom: 5px;
+}
+
+.check-message {
+    position: absolute;
+    right: 6px;
+    margin-top: 26px;
+    z-index: 10;
+}
+.timedelivered-message {
+    position: absolute;
+    right: 24px;
+    margin-top: 25px;
+    font-size: 11px;
+    line-height: 15px;
+    z-index: 10;
+    color: #8696a0;
+}
 
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>

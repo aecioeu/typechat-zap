@@ -58,6 +58,14 @@ function audioTemplate(id, file) {
 </div>`
 }
 
+function messageTemplate(){
+  var today = new Date();
+
+  return `<div class="timedelivered-message">${(today.getHours()<10?'0':'') + today.getHours()}:${(today.getMinutes()<10?'0':'') + today.getMinutes()}</div>
+          <div class="${idMessage}-checkMessage check-message">${check}</div>`
+}
+
+
 $(document).on('click', '.speed', async function(){ 
 
 
@@ -95,13 +103,47 @@ if ($(this).attr("plaing") && $(this).attr("plaing") == 'true') {
 }); 
 
 
-function observe() {
+async function observe() {
 
-    const randomId = function (length = 6) {
-      return Math.random()
-        .toString(36)
-        .substring(2, length + 2);
-    };
+  const randomId = function (length = 6) {
+    return Math.random()
+      .toString(36)
+      .substring(2, length + 2);
+  };
+
+
+  var targetNode = document.querySelector("typebot-standard").shadowRoot.querySelectorAll(`.bubble-typing`)
+
+  if(targetNode.length > 0){
+  
+    targetNode.forEach((entry) => {
+      console.log(entry)
+
+      var data = $(entry).attr("data-testid")
+      if($(entry).attr("data-testid") == "host-bubble"){
+
+        let idMessage = randomId(8)
+
+        entry.insertAdjacentHTML('beforeend', messageTemplate(idMessage));
+
+        var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`.${idMessage}-checkMessage`)
+
+        setTimeout(() => { el.innerHTML = doubleCheck }, 500);
+        setTimeout(() => { el.innerHTML = doubleCheckRead }, 1500);
+
+        $(entry).removeAttr("data-testid")
+      }
+   
+
+  
+    })
+  
+  
+  }
+
+
+
+   
 
     console.log("observer started");
     //const targets = document.querySelectorAll('audio');
@@ -125,11 +167,14 @@ function observe() {
 
               let id = randomId(5);
               console.log(entry.target.getAttribute("transformPlayer"))
-               entry.target.setAttribute('transformPlayer', 'false');
+              console.log(entry.target.getAttribute("transformPlayer") == null)
+            
+             
+             if(entry.target.attr("transformPlayer") == null) {
+              console.log("is null")
 
-             // if(entry.target.getAttribute("transformPlayer") == 'false') {
-
-             console.log(entry.target.getAttribute("transformPlayer"))
+              entry.target.setAttribute('transformPlayer', 'true');
+          
 
                // entry.target.setAttribute('transformPlayer', 'true');
 
@@ -139,7 +184,7 @@ function observe() {
                 if (url) createAudio(id, url);
                 entry.target.remove()
 
-              //}
+              }
               
               //console.log(wavesurfer)
 
@@ -224,7 +269,10 @@ function observe() {
 
   setInterval(() => {
 
-  observe()
+
+  (async () => {
+    await  observe()
+  })();
 
  
   }, 500);
@@ -237,34 +285,3 @@ function observe() {
 // First we select the element we want to target
 
 //var target =document.querySelector("typebot-standard").shadowRoot.querySelectorAll(`.bubble-typing`)
-
-
-var observer = new MutationObserver(function(el){
-  console.log(el)
-
-    if(targetNode.style.display != 'none'){
-      console.log('iajidkaosjf')
-        // doSomething
-    }
-});
-var targetNode = document.querySelector("typebot-standard").shadowRoot.querySelector(`.bubble-typing`)
-
-const waitForElement = async (selector, rootElement = document.documentElement) => {
-  return new Promise((resolve) => {
-      const observer = new MutationObserver(() => {
-          const element = document.querySelector(selector);
-          if (element) {
-              observer.disconnect();
-              resolve(element);
-          }
-      });
-    
-      observer.observe(rootElement, {
-          childList: true,
-          subtree: true,
-      });
-  });
-};
-(async () => {
-  await waitForElement(targetNode)
-})();
