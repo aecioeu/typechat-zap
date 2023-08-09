@@ -175,9 +175,9 @@ async function observe() {
                // entry.target.setAttribute('transformPlayer', 'true');
               
 
-               setTimeout(() => {
+               //setTimeout(() => {
                 entry.target.closest("div").insertAdjacentHTML('beforeend', audioTemplate(id));
-               }, 400);
+               //}, 400);
 
                 
 
