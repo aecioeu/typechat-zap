@@ -129,10 +129,10 @@ async function observe() {
 
           var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`.${idMessage}-checkMessage`)
   
-          setTimeout(() => { el.innerHTML = doubleCheck }, 500);
-          setTimeout(() => { el.innerHTML = doubleCheckRead }, 1000);
+          setTimeout(() => { el.innerHTML = doubleCheck }, 200);
+          setTimeout(() => { el.innerHTML = doubleCheckRead }, 400);
           
-        }, 1050);
+        }, 0);
        
 
         $(entry).removeAttr("data-testid")
@@ -279,7 +279,7 @@ async function observe() {
   })();
 
  
-  }, 1100);
+  }, 500);
 
 
 
