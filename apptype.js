@@ -128,7 +128,7 @@ async function observe() {
 
         setTimeout(() => {
           entry.insertAdjacentHTML('beforeend', messageTemplate(idMessage));
-        }, 450);
+        }, 600);
         
         $(entry).removeAttr("data-testid")
       }
