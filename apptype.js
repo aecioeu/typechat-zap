@@ -163,6 +163,7 @@ async function observe() {
               //.shadowRoot.querySelector("#\\34 ickc > div")
 
               let id = randomId(5);
+              entry.target.hide()
            
               
              if($(entry.target).attr("transformPlayer") == null) {
@@ -173,9 +174,10 @@ async function observe() {
 
                // entry.target.setAttribute('transformPlayer', 'true');
               
+
                setTimeout(() => {
                 entry.target.closest("div").insertAdjacentHTML('beforeend', audioTemplate(id));
-               }, 200);
+               }, 400);
 
                 
 
