@@ -130,9 +130,9 @@ async function observe() {
           var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`.${idMessage}-checkMessage`)
   
           setTimeout(() => { el.innerHTML = doubleCheck }, 500);
-          setTimeout(() => { el.innerHTML = doubleCheckRead }, 1500);
+          setTimeout(() => { el.innerHTML = doubleCheckRead }, 1000);
           
-        }, 600);
+        }, 1050);
        
 
         $(entry).removeAttr("data-testid")
@@ -174,7 +174,7 @@ async function observe() {
               console.log(entry.target.getAttribute("transformPlayer") == null)
             
              
-             if(entry.target.attr("transformPlayer") == null) {
+             if($(entry.target).attr("transformPlayer") == null) {
               console.log("is null")
 
               entry.target.setAttribute('transformPlayer', 'true');
@@ -279,7 +279,7 @@ async function observe() {
   })();
 
  
-  }, 500);
+  }, 1100);
 
 
 
