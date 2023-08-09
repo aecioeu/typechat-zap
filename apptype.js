@@ -269,7 +269,7 @@ async function observe() {
     return wavesurfer[id];
   };
 
-/*
+
 
   setInterval(() => {
 
@@ -279,7 +279,7 @@ async function observe() {
   })();
 
  
-  }, 500);*/
+  }, 500);
 
 
 
