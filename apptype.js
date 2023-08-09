@@ -127,7 +127,7 @@ async function observe() {
         let idMessage = randomId(8)
 
         setTimeout(() => {
-          entry.insertAdjacentHTML('beforeend', messageTemplate(idMessage));
+          entry.closest("div").closest("div").insertAdjacentHTML('beforeend', messageTemplate(idMessage));
         }, 600);
         
         $(entry).removeAttr("data-testid")
