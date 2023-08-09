@@ -85,7 +85,7 @@ $(document).on('click', '.speed', async function(){
 $(document).on('click', '.player', async function(){ 
   //  alert("hey!");
     let id = $(this).attr("player")
-    console.log(id)    
+   // console.log(id)    
 
 if ($(this).attr("plaing") && $(this).attr("plaing") == 'true') {
     wavesurfer[id].pause();
@@ -117,7 +117,7 @@ async function observe() {
   if(targetNode.length > 0){
   
     targetNode.forEach((entry) => {
-      console.log(entry)
+     // console.log(entry)
 
       var data = $(entry).attr("data-testid")
       if($(entry).attr("data-testid") == "host-bubble"){
@@ -163,10 +163,8 @@ async function observe() {
               //.shadowRoot.querySelector("#\\34 ickc > div")
 
               let id = randomId(5);
-              console.log(entry.target.getAttribute("transformPlayer"))
-              console.log(entry.target.getAttribute("transformPlayer") == null)
-            
-             
+           
+              
              if($(entry.target).attr("transformPlayer") == null) {
               console.log("is null")
 
@@ -174,8 +172,12 @@ async function observe() {
           
 
                // entry.target.setAttribute('transformPlayer', 'true');
-
+              
+               setTimeout(() => {
                 entry.target.closest("div").insertAdjacentHTML('beforeend', audioTemplate(id));
+               }, 200);
+
+                
 
                 let url = entry.target.src;
                 if (url) createAudio(id, url);
