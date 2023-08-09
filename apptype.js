@@ -124,11 +124,14 @@ function observe() {
               //.shadowRoot.querySelector("#\\34 ickc > div")
 
               let id = randomId(5);
+              console.log(entry.target.getAttribute("transformPlayer"))
                entry.target.setAttribute('transformPlayer', 'false');
 
-              if(entry.target.getAttribute("transformPlayer") == 'false') {
+             // if(entry.target.getAttribute("transformPlayer") == 'false') {
 
-                entry.target.setAttribute('transformPlayer', 'true');
+             console.log(entry.target.getAttribute("transformPlayer"))
+
+               // entry.target.setAttribute('transformPlayer', 'true');
 
                 entry.target.closest("div").insertAdjacentHTML('beforeend', audioTemplate(id));
 
@@ -136,7 +139,7 @@ function observe() {
                 if (url) createAudio(id, url);
                 entry.target.remove()
 
-              }
+              //}
               
               //console.log(wavesurfer)
 
@@ -235,7 +238,7 @@ function observe() {
 
 //var target =document.querySelector("typebot-standard").shadowRoot.querySelectorAll(`.bubble-typing`)
 
-var targetNode = document.querySelector("typebot-standard").shadowRoot.querySelector(`.bubble-typing`)
+
 var observer = new MutationObserver(function(el){
   console.log(el)
 
@@ -244,4 +247,24 @@ var observer = new MutationObserver(function(el){
         // doSomething
     }
 });
-observer.observe(targetNode, { attributes: true, childList: true });
+var targetNode = document.querySelector("typebot-standard").shadowRoot.querySelector(`.bubble-typing`)
+
+const waitForElement = async (selector, rootElement = document.documentElement) => {
+  return new Promise((resolve) => {
+      const observer = new MutationObserver(() => {
+          const element = document.querySelector(selector);
+          if (element) {
+              observer.disconnect();
+              resolve(element);
+          }
+      });
+    
+      observer.observe(rootElement, {
+          childList: true,
+          subtree: true,
+      });
+  });
+};
+(async () => {
+  await waitForElement(targetNode)
+})();
