@@ -49,7 +49,7 @@ function audioTemplate(id, file) {
    <div class="speed-button"><a href="#" class="text-muted speed" speed="1.0" velocity="${id}"> 1.0 x</a></div>
     <div class="${id}-time time">0:00</div>
     <div class="${id}-timedelivered timedelivered">${(today.getHours()<10?'0':'') + today.getHours()}:${(today.getMinutes()<10?'0':'') + today.getMinutes()}</div>
-    <div class="${id}-check check">${check}</div>
+    <div class="${id}-check check">${doubleCheck}</div>
  
 
 </div>
@@ -126,7 +126,7 @@ async function observe() {
 
         setTimeout(() => {
           entry.insertAdjacentHTML('beforeend', messageTemplate(idMessage));
-        }, 350);
+        }, 450);
         
         $(entry).removeAttr("data-testid")
       }
@@ -255,8 +255,7 @@ async function observe() {
 
      var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`.${id}-check`)
 
-     setTimeout(() => { el.innerHTML = doubleCheck }, 500);
-     setTimeout(() => { el.innerHTML = doubleCheckRead }, 1500);
+     setTimeout(() => { el.innerHTML = doubleCheckRead }, 450);
     
     //window['audio' + id].init()
     return wavesurfer[id];
