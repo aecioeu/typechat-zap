@@ -124,12 +124,16 @@ async function observe() {
 
         let idMessage = randomId(8)
 
-        entry.insertAdjacentHTML('beforeend', messageTemplate(idMessage));
+        setTimeout(() => {
+          entry.insertAdjacentHTML('beforeend', messageTemplate(idMessage));
 
-        var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`.${idMessage}-checkMessage`)
-
-        setTimeout(() => { el.innerHTML = doubleCheck }, 500);
-        setTimeout(() => { el.innerHTML = doubleCheckRead }, 1500);
+          var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`.${idMessage}-checkMessage`)
+  
+          setTimeout(() => { el.innerHTML = doubleCheck }, 500);
+          setTimeout(() => { el.innerHTML = doubleCheckRead }, 1500);
+          
+        }, 600);
+       
 
         $(entry).removeAttr("data-testid")
       }
