@@ -58,7 +58,7 @@ function audioTemplate(id, file) {
 </div>`
 }
 
-function messageTemplate(){
+function messageTemplate(idMessage){
   var today = new Date();
 
   return `<div class="timedelivered-message">${(today.getHours()<10?'0':'') + today.getHours()}:${(today.getMinutes()<10?'0':'') + today.getMinutes()}</div>
