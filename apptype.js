@@ -36,9 +36,6 @@ function fancyTimeFormat(duration) {
 
 function audioTemplate(id, file) {
   var today = new Date();
-  var h = today.getHours();
-  var m = today.getMinutes();
-  var s = today.getSeconds()
 
   return  ` <div class="flex-container">
    
@@ -51,7 +48,7 @@ function audioTemplate(id, file) {
 
    <div class="speed-button"><a href="#" class="text-muted speed" speed="1.0" velocity="${id}"> 1.0 x</a></div>
     <div class="${id}-time time">0:00</div>
-    <div class="${id}-timedelivered timedelivered">${h}:${m}</div>
+    <div class="${id}-timedelivered timedelivered">${(today.getHours()<10?'0':'') + today.getHours()}:${(today.getMinutes()<10?'0':'') + today.getMinutes()}</div>
     <div class="${id}-check check">${check}</div>
  
 
