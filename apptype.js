@@ -124,11 +124,11 @@ function observe() {
               //.shadowRoot.querySelector("#\\34 ickc > div")
 
               let id = randomId(5);
-               entry.target.setAttribute('transformPlayer',false);
+               entry.target.setAttribute('transformPlayer', 'false');
 
-              if(entry.target.getAttribute("transformPlayer") == false) {
+              if(entry.target.getAttribute("transformPlayer") == 'false') {
 
-                entry.target.setAttribute('transformPlayer',true);
+                entry.target.setAttribute('transformPlayer', 'true');
 
                 entry.target.closest("div").insertAdjacentHTML('beforeend', audioTemplate(id));
 
