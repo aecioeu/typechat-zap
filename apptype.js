@@ -163,7 +163,7 @@ async function observe() {
               //.shadowRoot.querySelector("#\\34 ickc > div")
 
               let id = randomId(5);
-              entry.target.hide()
+              $(entry.target).hide()
            
               
              if($(entry.target).attr("transformPlayer") == null) {
@@ -183,7 +183,7 @@ async function observe() {
 
                 let url = entry.target.src;
                 if (url) createAudio(id, url);
-                entry.target.remove()
+                //entry.target.remove()
 
               }
               
