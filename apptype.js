@@ -74,12 +74,16 @@ function headerWhatsapp() {
 </div>`
 }
 
+var gapCount = 0
+
 function digitando(text,timeout){
+  gapCount = 1
   var el = document.querySelector("typebot-standard").shadowRoot.querySelector("[id='status']")
   el.innerText = text
   if(timeout){
   setTimeout(() => {
     digitando("online") 
+    gapCount = 0
    }, timeout);}
 }
 
@@ -148,7 +152,7 @@ async function observe() {
       .substring(2, length + 2);
   };
 
-  var gapCount = 0
+
   var gap = document.querySelector("typebot-standard").shadowRoot.querySelector(".gap-1")
 
     if(gap && gapCount == 0){
