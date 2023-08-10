@@ -122,8 +122,8 @@ async function observe() {
      // console.log(entry)
 
       var data = $(entry).attr("data-testid")
-      if($(entry).attr("data-testid") == "host-bubble"){
-        $(entry).removeAttr("data-testid")
+     // if($(entry).attr("data-testid") == "host-bubble"){
+      //  $(entry).removeAttr("data-testid")
 
         let idMessage = randomId(8)
 
@@ -136,7 +136,7 @@ async function observe() {
       
         
         
-      }
+     // }
    
 
   
