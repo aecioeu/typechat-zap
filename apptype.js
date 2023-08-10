@@ -88,17 +88,16 @@ function digitando(text,timeout){
     el.innerText = text
 
     if(timeout){ setTimeout(() => {
-      digitando("online")
+      el.innerText = "online"
       running = true
   }, timeout);
 
   }else{
     setTimeout(() => { 
-      digitando("online")
+      el.innerText = "online"
       running = true} , 1000);
   }
     
-
    }
 
       //cancela o que estava agendado para ser executado
