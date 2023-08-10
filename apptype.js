@@ -74,9 +74,13 @@ function headerWhatsapp() {
 </div>`
 }
 
-function digitando(text){
+function digitando(text,timeout){
   var el = document.querySelector("typebot-standard").shadowRoot.querySelector("[id='status']")
   el.innerText = text
+  if(timeout){
+  setTimeout(() => {
+    digitando("online") 
+   }, timeout);}
 }
 
 document.querySelector("typebot-standard").shadowRoot.querySelector("div").insertAdjacentHTML('afterbegin', headerWhatsapp());
@@ -221,7 +225,7 @@ async function observe() {
 
               //.shadowRoot.querySelector("#\\34 ickc > div")
               
-              digitando('online')
+              
 
               let id = randomId(5);
               $(entry.target).hide()
