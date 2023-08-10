@@ -213,12 +213,12 @@ async function observe() {
         (entries, observer) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              $(entry.target).muted = true
+             
               // console.log('Enter' ,$(entry.target).attr("control"))
               // carregar o audio
 
               //.shadowRoot.querySelector("#\\34 ickc > div")
-
+              entry.target.muted = true
               digitando('online')
 
               let id = randomId(5);
