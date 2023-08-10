@@ -63,13 +63,23 @@ function audioTemplate(id, file) {
 function headerWhatsapp() {
   return `<div class="user-bar">
   <div class="avatar">
-    <img id="avatar" src="" alt="Avatar">
+    <img id="avatar" src="${document.querySelector("typebot-standard").shadowRoot.querySelector("div > figure > img").src}" alt="Avatar">
   </div>
   <div class="name">
     <span id="name">Zeno Rocha</span>
-    <span class="status" id="status">online</span>
+    <span class="status text-fade-in" id="status">online</span>
   </div>
 </div>`
+}
+
+function digitando(text, timeout){
+
+  var el = document.querySelector("#__next > div > typebot-standard").shadowRoot.querySelector("[id='status']")
+  el.innerText = text
+  setTimeout(() => {
+    el.innerText = "Online"
+  }, timeout);
+
 }
 
 document.querySelector("typebot-standard").shadowRoot.querySelector("div").insertAdjacentHTML('afterbegin', headerWhatsapp());
@@ -136,12 +146,7 @@ async function observe() {
 
   var gap = document.querySelector("typebot-standard").shadowRoot.querySelector(".gap-1")
 
-    if(gap){
-      console.log('digitando')
-    }else{
-      console.log('parado')
-    }
-
+    if(gap){ digitando("Digitando ..." , 3000) }
 
   var targetNode = document.querySelector("typebot-standard").shadowRoot.querySelectorAll(`.bubble-typing`)
 
