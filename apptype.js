@@ -127,9 +127,9 @@ async function observe() {
 
         let idMessage = randomId(8)
 
-        setTimeout(() => {
+       // setTimeout(() => {
           entry.closest("div").closest("div").insertAdjacentHTML('beforeend', messageTemplate(idMessage));
-        }, 300);
+        //}, 300);
 
         var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`[id='${idMessage}-checkMessage']`)
         setTimeout(() => { el.innerHTML = doubleCheckRead }, 900);
