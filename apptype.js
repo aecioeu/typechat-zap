@@ -120,7 +120,7 @@ async function observe() {
 
   var gap = document.querySelector("typebot-standard").shadowRoot.querySelector(".gap-1")
 
-    if(gap.length > 0){
+    if(gap){
       console.log('digitando')
     }else{
       console.log('parado')
