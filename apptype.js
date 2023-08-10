@@ -64,7 +64,7 @@ function messageTemplate(idMessage){
   var today = new Date();
 
   return `<div class="timedelivered-message">${(today.getHours()<10?'0':'') + today.getHours()}:${(today.getMinutes()<10?'0':'') + today.getMinutes()}</div>
-          <div class="${idMessage}-checkMessage check-message">${doubleCheckRead}</div>`
+          <div class="check-message" id="${idMessage}-checkMessage">${doubleCheck}</div>`
 }
 
 
@@ -129,6 +129,9 @@ async function observe() {
         setTimeout(() => {
           entry.closest("div").closest("div").insertAdjacentHTML('beforeend', messageTemplate(idMessage));
         }, 600);
+        var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`[id='${idMessage}-checkMessage']`)
+        setTimeout(() => { el.innerHTML = doubleCheckRead }, 1000);
+      
         
         $(entry).removeAttr("data-testid")
       }
@@ -180,7 +183,7 @@ async function observe() {
                //setTimeout(() => {
                 entry.target.closest("div").insertAdjacentHTML('beforeend', audioTemplate(id));
                //}, 400);
-             
+              
 
                 let url = entry.target.src;
                 if (url) createAudio(id, url);
@@ -265,7 +268,6 @@ async function observe() {
   
 
      var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`[id='${id}-check']`)
-
      setTimeout(() => { el.innerHTML = doubleCheckRead }, 450);
      setTimeout(() => { wavesurfer[id].play() }, 700);
     
