@@ -128,9 +128,9 @@ async function observe() {
 
         setTimeout(() => {
           entry.closest("div").closest("div").insertAdjacentHTML('beforeend', messageTemplate(idMessage));
-        }, 600);
+        }, 300);
         var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`[id='${idMessage}-checkMessage']`)
-        setTimeout(() => { el.innerHTML = doubleCheckRead }, 1000);
+        setTimeout(() => { el.innerHTML = doubleCheckRead }, 600);
       
         
         $(entry).removeAttr("data-testid")
