@@ -49,7 +49,7 @@ function audioTemplate(id, file) {
    <div class="audio" id="${id}"></div>  
 
    <div class="speed-button"><a href="#" class="text-muted speed" speed="1.0" velocity="${id}"> 1.0 x</a></div>
-    <div class="${id}-time time">0:00</div>
+    <div class="time" id="${id}-time">0:00</div>
     <div class="timedelivered" id="${id}-timedelivered">${(today.getHours()<10?'0':'') + today.getHours()}:${(today.getMinutes()<10?'0':'') + today.getMinutes()}</div>
     <div class="check" id="${id}-check">${doubleCheck}</div>
  
