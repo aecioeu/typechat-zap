@@ -74,14 +74,9 @@ function headerWhatsapp() {
 </div>`
 }
 
-function digitando(text, timeout){
-
+function digitando(text){
   var el = document.querySelector("typebot-standard").shadowRoot.querySelector("[id='status']")
   el.innerText = text
-  setTimeout(() => {
-    el.innerText = "online"
-  }, (timeout) ? timeout: 0);
-
 }
 
 document.querySelector("typebot-standard").shadowRoot.querySelector("div").insertAdjacentHTML('afterbegin', headerWhatsapp());
@@ -149,9 +144,17 @@ async function observe() {
       .substring(2, length + 2);
   };
 
+  var gapCount = 0
   var gap = document.querySelector("typebot-standard").shadowRoot.querySelector(".gap-1")
 
-    if(gap){ digitando("digitando..." , 2500) }
+    if(gap && gapCount == 0){
+       gapCount++
+       digitando("digitando...") 
+       setTimeout(() => {
+        digitando("online") 
+        gapCount = 0
+       }, 2500);
+             }
 
   var targetNode = document.querySelector("typebot-standard").shadowRoot.querySelectorAll(`.bubble-typing`)
 
@@ -174,7 +177,7 @@ async function observe() {
           
           setTimeout(() => { el.innerHTML = doubleCheck }, 400);
           setTimeout(() => { el.innerHTML = doubleCheckRead }, 800);
-          //digitando('online', 0)
+          digitando('online')
 
         }, 600);
 
@@ -210,12 +213,13 @@ async function observe() {
         (entries, observer) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
+              $(entry.target).muted = true
               // console.log('Enter' ,$(entry.target).attr("control"))
               // carregar o audio
 
               //.shadowRoot.querySelector("#\\34 ickc > div")
 
-              console.log("gravando audio")
+              digitando('online')
 
               let id = randomId(5);
               $(entry.target).hide()
@@ -225,11 +229,8 @@ async function observe() {
               console.log("is null")
 
               entry.target.setAttribute('transformPlayer', 'true');
-          
-
                // entry.target.setAttribute('transformPlayer', 'true');
               
-
                //setTimeout(() => {
                 entry.target.closest("div").insertAdjacentHTML('beforeend', audioTemplate(id));
                //}, 400);
@@ -321,7 +322,7 @@ async function observe() {
      setTimeout(() => { el.innerHTML = doubleCheckRead }, 450);
      setTimeout(() => { 
       
-      //wavesurfer[id].play() 
+      wavesurfer[id].play() 
       
     
     
