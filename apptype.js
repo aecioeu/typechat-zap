@@ -83,13 +83,19 @@ function digitando(text,timeout){
     
    if(running == false){
     running = true
+
     var el = document.querySelector("typebot-standard").shadowRoot.querySelector("[id='status']")
     el.innerText = text
+
     if(timeout){ setTimeout(() => {
       digitando("online")
       running = true
-  }, timeout);}else{
-    setTimeout(() => { running = true} , 2000);
+  }, timeout);
+
+  }else{
+    setTimeout(() => { 
+      digitando("online")
+      running = true} , 1000);
   }
     
 
