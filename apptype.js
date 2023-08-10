@@ -186,6 +186,8 @@ async function observe() {
 
               //.shadowRoot.querySelector("#\\34 ickc > div")
 
+              console.log("gravando audio")
+
               let id = randomId(5);
               $(entry.target).hide()
            
