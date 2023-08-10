@@ -122,21 +122,22 @@ async function observe() {
      // console.log(entry)
 
       var data = $(entry).attr("data-testid")
-     // if($(entry).attr("data-testid") == "host-bubble"){
-      //  $(entry).removeAttr("data-testid")
+      if($(entry).attr("data-testid") == "host-bubble"){
+        $(entry).removeAttr("data-testid")
 
         let idMessage = randomId(8)
 
-       // setTimeout(() => {
+        setTimeout(() => {
           entry.closest("div").closest("div").insertAdjacentHTML('beforeend', messageTemplate(idMessage));
-        //}, 300);
+          var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`[id='${idMessage}-checkMessage']`)
+          setTimeout(() => { el.innerHTML = doubleCheckRead }, 600);
+        }, 300);
 
-        var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`[id='${idMessage}-checkMessage']`)
-        setTimeout(() => { el.innerHTML = doubleCheckRead }, 900);
+        
       
         
         
-     // }
+      }
    
 
   
