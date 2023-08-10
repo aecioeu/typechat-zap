@@ -135,7 +135,7 @@ if ($(this).attr("plaing") && $(this).attr("plaing") == 'true') {
 const Recived = () => {
    const audio = new Audio(recive);
    audio.addEventListener('canplay', function() {
-    audio.play();
+   // audio.play();
 });
 
 }
@@ -213,31 +213,34 @@ async function observe() {
               // console.log('Enter' ,$(entry.target).attr("control"))
               // carregar o audio
 
+              var el = entry.target
+              
+            
               //.shadowRoot.querySelector("#\\34 ickc > div")
 
               console.log("gravando audio")
 
               let id = randomId(5);
-              $(entry.target).hide()
+             // $(entry.target).hide()
            
               
              if($(entry.target).attr("transformPlayer") == null) {
               console.log("is null")
 
               entry.target.setAttribute('transformPlayer', 'true');
-          
+              $(entry.target).remove()
 
                // entry.target.setAttribute('transformPlayer', 'true');
               
 
                //setTimeout(() => {
-                entry.target.closest("div").insertAdjacentHTML('beforeend', audioTemplate(id));
+                el.closest("div").insertAdjacentHTML('beforeend', audioTemplate(id));
                //}, 400);
               
 
-                let url = entry.target.src;
+                let url = el.src;
                 if (url) createAudio(id, url);
-                $(entry.target).remove()
+               
                 
                 //entry.target.remove()
 
@@ -298,7 +301,7 @@ async function observe() {
       responsive: true,
       normalize: true,
       hideScrollbar: false,
-      //autoplay : true
+      autoplay : true
  
     });
 
