@@ -60,6 +60,22 @@ function audioTemplate(id, file) {
 </div>`
 }
 
+function headerWhatsapp() {
+  return `<div class="user-bar">
+  <div class="avatar">
+    <img id="avatar" src="" alt="Avatar">
+  </div>
+  <div class="name">
+    <span id="name">Zeno Rocha</span>
+    <span class="status" id="status">online</span>
+  </div>
+</div>`
+}
+
+document.querySelector("typebot-standard").shadowRoot.querySelector("div").insertAdjacentHTML('afterbegin', headerWhatsapp());
+
+
+
 function messageTemplate(idMessage){
   var today = new Date();
 
