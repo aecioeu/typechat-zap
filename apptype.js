@@ -214,8 +214,24 @@ async function observe() {
   }
 
 
+  
 
   var wavesurfer = [];
+
+  wavesurfer[id].on('timeupdate', (timeupdate) => {
+    //console.log(Math.round(timeupdate))
+    //$(`.${id}-time`).html(fancyTimeFormat(timeupdate))
+    var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`.${id}-time`)
+    el.innerHTML = fancyTimeFormat(timeupdate)
+
+  })
+
+    wavesurfer[id].on('ready', (duration) => {
+    //$(`.${id}-time`).html(fancyTimeFormat(duration))
+    var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`.${id}-time`)
+    el.innerHTML = fancyTimeFormat(duration)
+   })
+
 
   var createAudio = (id, url) => {
     //var container = document.querySelector("typebot-standard").shadowRoot.getElementById(id)
@@ -246,19 +262,6 @@ async function observe() {
  
     });
 
-    wavesurfer[id].on('timeupdate', (timeupdate) => {
-      //console.log(Math.round(timeupdate))
-      //$(`.${id}-time`).html(fancyTimeFormat(timeupdate))
-      var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`.${id}-time`)
-      el.innerHTML = fancyTimeFormat(timeupdate)
-
-    })
- 
-      wavesurfer[id].on('ready', (duration) => {
-      //$(`.${id}-time`).html(fancyTimeFormat(duration))
-      var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`.${id}-time`)
-      el.innerHTML = fancyTimeFormat(duration)
-     })
 
      var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`.${id}-check`)
 
