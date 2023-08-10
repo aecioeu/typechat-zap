@@ -39,7 +39,7 @@ function fancyTimeFormat(duration) {
 function audioTemplate(id, file) {
   var today = new Date();
 
-  return  ` <div class="flex-container">
+  return  ` <div class="flex-container " style="transition: opacity .2s ease-in .2s;">
    
    <div class="player-button">  
     <div class="rounded-circle h24 player" player="${id}" >
