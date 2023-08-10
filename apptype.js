@@ -64,7 +64,7 @@ function messageTemplate(idMessage){
   var today = new Date();
 
   return `<div class="timedelivered-message">${(today.getHours()<10?'0':'') + today.getHours()}:${(today.getMinutes()<10?'0':'') + today.getMinutes()}</div>
-          <div class="check-message" id="${idMessage}-checkMessage">${doubleCheck}</div>`
+          <div class="check-message" id="${idMessage}-checkMessage">${check}</div>`
 }
 
 
@@ -130,6 +130,7 @@ async function observe() {
         setTimeout(() => {
           entry.closest("div").closest("div").insertAdjacentHTML('beforeend', messageTemplate(idMessage));
           var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`[id='${idMessage}-checkMessage']`)
+          setTimeout(() => { el.innerHTML = doubleCheck }, 400);
           setTimeout(() => { el.innerHTML = doubleCheckRead }, 800);
         }, 600);
 
