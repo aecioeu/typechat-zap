@@ -212,13 +212,15 @@ async function observe() {
       const io = new IntersectionObserver(
         (entries, observer) => {
           entries.forEach((entry) => {
+            entry.target.muted = true
+
             if (entry.isIntersecting) {
              
               // console.log('Enter' ,$(entry.target).attr("control"))
               // carregar o audio
 
               //.shadowRoot.querySelector("#\\34 ickc > div")
-              entry.target.muted = true
+              
               digitando('online')
 
               let id = randomId(5);
@@ -342,7 +344,7 @@ async function observe() {
   })();
 
  
-  }, 500);
+  }, 100);
 
 
 
