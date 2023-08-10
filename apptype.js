@@ -77,14 +77,12 @@ function headerWhatsapp() {
 
 var running;
 
-
 function digitando(text,timeout){
    window.clearTimeout(running);
     
     var el = document.querySelector("typebot-standard").shadowRoot.querySelector("[id='status']")
     el.innerText = text
-    if(timeout){
-      setTimeout(() => {digitando("online")}, timeout);}
+    if(timeout){ running = setTimeout(() => {digitando("online")}, timeout);}
       //cancela o que estava agendado para ser executado
 
   //setTimeout(() => { gapCount = 0;}, (timeout + 3000));
