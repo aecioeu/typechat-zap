@@ -74,15 +74,20 @@ function headerWhatsapp() {
 </div>`
 }
 
-var gapCount = 0
+
+var running;
+
 
 function digitando(text,timeout){
-  gapCount = 1
-  var el = document.querySelector("typebot-standard").shadowRoot.querySelector("[id='status']")
-  el.innerText = text
-  if(timeout){
-  setTimeout(() => {digitando("online")}, timeout);}
-  setTimeout(() => { gapCount = 0;}, (timeout + 3000));
+   window.clearTimeout(running);
+    
+    var el = document.querySelector("typebot-standard").shadowRoot.querySelector("[id='status']")
+    el.innerText = text
+    if(timeout){
+      setTimeout(() => {digitando("online")}, timeout);}
+      //cancela o que estava agendado para ser executado
+
+  //setTimeout(() => { gapCount = 0;}, (timeout + 3000));
 }
 
 document.querySelector("typebot-standard").shadowRoot.querySelector("div").insertAdjacentHTML('afterbegin', headerWhatsapp());
