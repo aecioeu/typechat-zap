@@ -44,7 +44,6 @@ function audioTemplate(id, file) {
    
    <div class="player-button">  
     <div class="rounded-circle h24 player" player="${id}" >
-     <!-- Play icon-->
      ${playIcon}
    </div>
    <div class="audio" id="${id}"></div>  
@@ -67,7 +66,7 @@ function headerWhatsapp() {
     <img id="avatar" src="${document.querySelector("typebot-standard").shadowRoot.querySelector("div > figure > img").src}" alt="Avatar">
   </div>
   <div class="name">
-    <span id="name">Aécio Oliveira <img src="${verified}"></span>
+    <span id="name">Aécio Oliveira <img src="${verified}" style="display: inline-grid;"></span>
     <span class="status text-fade-in" id="status">online</span>
   </div>
 </div>`
@@ -147,7 +146,7 @@ async function observe() {
 
   var gap = document.querySelector("typebot-standard").shadowRoot.querySelector(".gap-1")
 
-    if(gap){ digitando("digitando ..." , 3000) }
+    if(gap){ digitando("digitando..." , 3000) }
 
   var targetNode = document.querySelector("typebot-standard").shadowRoot.querySelectorAll(`.bubble-typing`)
 
