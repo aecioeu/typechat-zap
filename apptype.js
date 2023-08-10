@@ -89,13 +89,13 @@ function digitando(text,timeout){
 
     if(timeout){ setTimeout(() => {
       el.innerText = "online"
-      running = true
+      running = false
   }, timeout);
 
   }else{
     setTimeout(() => { 
       el.innerText = "online"
-      running = true} , 1000);
+      running = false} , 1000);
   }
     
    }
