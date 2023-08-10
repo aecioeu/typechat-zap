@@ -78,7 +78,7 @@ function digitando(text, timeout){
   el.innerText = text
   setTimeout(() => {
     el.innerText = "Online"
-  }, timeout);
+  }, (timeout) ? timeout: 0);
 
 }
 
@@ -168,6 +168,8 @@ async function observe() {
           Recived()
           setTimeout(() => { el.innerHTML = doubleCheck }, 400);
           setTimeout(() => { el.innerHTML = doubleCheckRead }, 800);
+          digitando('Online', 0)
+
         }, 600);
 
         
