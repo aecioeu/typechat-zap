@@ -242,7 +242,7 @@ async function observe() {
       responsive: true,
       normalize: true,
       hideScrollbar: false,
-      //autoplay : true
+      autoplay : true
  
     });
 
