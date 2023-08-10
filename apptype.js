@@ -77,7 +77,7 @@ function digitando(text, timeout){
   var el = document.querySelector("#__next > div > typebot-standard").shadowRoot.querySelector("[id='status']")
   el.innerText = text
   setTimeout(() => {
-    el.innerText = "Online"
+    el.innerText = "online"
   }, (timeout) ? timeout: 0);
 
 }
@@ -146,7 +146,7 @@ async function observe() {
 
   var gap = document.querySelector("typebot-standard").shadowRoot.querySelector(".gap-1")
 
-    if(gap){ digitando("Digitando ..." , 3000) }
+    if(gap){ digitando("digitando ..." , 3000) }
 
   var targetNode = document.querySelector("typebot-standard").shadowRoot.querySelectorAll(`.bubble-typing`)
 
@@ -168,7 +168,7 @@ async function observe() {
           Recived()
           setTimeout(() => { el.innerHTML = doubleCheck }, 400);
           setTimeout(() => { el.innerHTML = doubleCheckRead }, 800);
-          digitando('Online', 0)
+          digitando('online', 0)
 
         }, 600);
 
