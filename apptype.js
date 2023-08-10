@@ -180,7 +180,7 @@ async function observe() {
                //setTimeout(() => {
                 entry.target.closest("div").insertAdjacentHTML('beforeend', audioTemplate(id));
                //}, 400);
-
+               $(entry.target).remove()
                 
 
                 let url = entry.target.src;
