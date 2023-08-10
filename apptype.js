@@ -213,22 +213,19 @@ async function observe() {
               // console.log('Enter' ,$(entry.target).attr("control"))
               // carregar o audio
 
-              var el = entry.target
-              
-            
               //.shadowRoot.querySelector("#\\34 ickc > div")
 
               console.log("gravando audio")
 
               let id = randomId(5);
-             // $(entry.target).hide()
+              $(entry.target).hide()
            
               
              if($(entry.target).attr("transformPlayer") == null) {
               console.log("is null")
 
               entry.target.setAttribute('transformPlayer', 'true');
-              $(entry.target).remove()
+          
 
                // entry.target.setAttribute('transformPlayer', 'true');
               
@@ -240,7 +237,7 @@ async function observe() {
 
                 let url = entry.target.src;
                 if (url) createAudio(id, url);
-               
+               // $(entry.target).remove()
                 
                 //entry.target.remove()
 
