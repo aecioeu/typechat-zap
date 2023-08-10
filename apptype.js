@@ -234,11 +234,11 @@ async function observe() {
               
 
                //setTimeout(() => {
-                el.closest("div").insertAdjacentHTML('beforeend', audioTemplate(id));
+                entry.target.closest("div").insertAdjacentHTML('beforeend', audioTemplate(id));
                //}, 400);
               
 
-                let url = el.src;
+                let url = entry.target.src;
                 if (url) createAudio(id, url);
                
                 
@@ -301,7 +301,7 @@ async function observe() {
       responsive: true,
       normalize: true,
       hideScrollbar: false,
-      autoplay : true
+      //autoplay : true
  
     });
 
