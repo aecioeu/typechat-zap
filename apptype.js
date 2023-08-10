@@ -156,9 +156,7 @@ async function observe() {
 
   var gap = document.querySelector("typebot-standard").shadowRoot.querySelector(".gap-1")
 
-  setInterval(() => {
-    console.log(gap)
-  }, 500);
+
 
 
     if(gap){digitando("digitando...", 2000)}
