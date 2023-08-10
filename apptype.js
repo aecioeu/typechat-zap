@@ -75,14 +75,26 @@ function headerWhatsapp() {
 }
 
 
-var running;
+var running = false;
+
 
 function digitando(text,timeout){
-   window.clearTimeout(running);
+   //window.clearTimeout(running);
     
+   if(running == false){
+    running = true
     var el = document.querySelector("typebot-standard").shadowRoot.querySelector("[id='status']")
     el.innerText = text
-    if(timeout){ running = setTimeout(() => {digitando("online")}, timeout);}
+    if(timeout){ setTimeout(() => {
+      digitando("online")
+      running = true
+  }, timeout);}else{
+    setTimeout(() => { running = true} , 2000);
+  }
+    
+
+   }
+
       //cancela o que estava agendado para ser executado
 
   //setTimeout(() => { gapCount = 0;}, (timeout + 3000));
