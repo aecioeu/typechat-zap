@@ -68,7 +68,7 @@ function headerWhatsapp() {
     <img id="avatar" src="${document.querySelector("typebot-standard").shadowRoot.querySelector("div > figure > img").src}" alt="Avatar">
   </div>
   <div class="name">
-    <span id="name">Aécio Oliveira <img src="${verified}" style="display: inline-grid;"></span>
+    <span id="name">Aécio Oliveira <img src="${verified}" style="display: inline-grid; height: 20px;"></span>
     <span class="status text-fade-in" id="status">online</span>
   </div>
 </div>`
@@ -134,7 +134,10 @@ if ($(this).attr("plaing") && $(this).attr("plaing") == 'true') {
 
 const Recived = () => {
    const audio = new Audio(recive);
-   audio.play();
+   audio.addEventListener('canplay', function() {
+    audio.play();
+});
+
 }
 
 
@@ -168,6 +171,7 @@ async function observe() {
           entry.closest("div").closest("div").insertAdjacentHTML('beforeend', messageTemplate(idMessage));
           var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`[id='${idMessage}-checkMessage']`)
           Recived()
+          
           setTimeout(() => { el.innerHTML = doubleCheck }, 400);
           setTimeout(() => { el.innerHTML = doubleCheckRead }, 800);
           //digitando('online', 0)
@@ -315,7 +319,13 @@ async function observe() {
 
      var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`[id='${id}-check']`)
      setTimeout(() => { el.innerHTML = doubleCheckRead }, 450);
-     setTimeout(() => { wavesurfer[id].play() }, 700);
+     setTimeout(() => { 
+      
+      //wavesurfer[id].play() 
+      
+    
+    
+    }, 700);
     
     //window['audio' + id].init()
     return wavesurfer[id];
