@@ -118,12 +118,21 @@ async function observe() {
       .substring(2, length + 2);
   };
 
+  var gap = document.querySelector("typebot-standard").shadowRoot.querySelector(".gap-1")
+
+    if(gap.length > 0){
+      console.log('digitando')
+    }else{
+      console.log('parado')
+    }
+
 
   var targetNode = document.querySelector("typebot-standard").shadowRoot.querySelectorAll(`.bubble-typing`)
 
   if(targetNode.length > 0){
   
     targetNode.forEach((entry) => {
+    
      // console.log(entry)
 
       var data = $(entry).attr("data-testid")
