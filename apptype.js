@@ -176,7 +176,7 @@ async function observe() {
           
           setTimeout(() => { el.innerHTML = doubleCheck }, 400);
           setTimeout(() => { el.innerHTML = doubleCheckRead }, 800);
-          digitando('online')
+          //digitando('online')
 
         }, 600);
 
