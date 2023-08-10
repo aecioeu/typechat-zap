@@ -131,7 +131,7 @@ async function observe() {
           entry.closest("div").closest("div").insertAdjacentHTML('beforeend', messageTemplate(idMessage));
           var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`[id='${idMessage}-checkMessage']`)
          // setTimeout(() => { el.innerHTML = doubleCheckRead }, 600);
-        }, 300);
+        }, 600);
 
         
       
