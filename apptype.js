@@ -50,8 +50,8 @@ function audioTemplate(id, file) {
 
    <div class="speed-button"><a href="#" class="text-muted speed" speed="1.0" velocity="${id}"> 1.0 x</a></div>
     <div class="${id}-time time">0:00</div>
-    <div class="${id}-timedelivered timedelivered">${(today.getHours()<10?'0':'') + today.getHours()}:${(today.getMinutes()<10?'0':'') + today.getMinutes()}</div>
-    <div class="${id}-check check">${doubleCheck}</div>
+    <div class="timedelivered" id="${id}-timedelivered">${(today.getHours()<10?'0':'') + today.getHours()}:${(today.getMinutes()<10?'0':'') + today.getMinutes()}</div>
+    <div class="check" id="${id}-check">${doubleCheck}</div>
  
 
 </div>
@@ -221,14 +221,14 @@ async function observe() {
   wavesurfer[id].on('timeupdate', (timeupdate) => {
     //console.log(Math.round(timeupdate))
     //$(`.${id}-time`).html(fancyTimeFormat(timeupdate))
-    var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`.${id}-time`)
+    var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`[id='${id}-time']`)
     el.innerHTML = fancyTimeFormat(timeupdate)
 
   })
 
     wavesurfer[id].on('ready', (duration) => {
     //$(`.${id}-time`).html(fancyTimeFormat(duration))
-    var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`.${id}-time`)
+    var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`[id='${id}-time']`)
     el.innerHTML = fancyTimeFormat(duration)
    })
 
@@ -262,8 +262,7 @@ async function observe() {
  
     });
 
-
-     var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`.${id}-check`)
+     var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`[id='${id}-check']`)
 
      setTimeout(() => { el.innerHTML = doubleCheckRead }, 450);
      setTimeout(() => { wavesurfer[id].play() }, 700);
