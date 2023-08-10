@@ -263,7 +263,7 @@ async function observe() {
      var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`.${id}-check`)
 
      setTimeout(() => { el.innerHTML = doubleCheckRead }, 450);
-     setTimeout(() => { wavesurfer[id].play() }, 500);
+     setTimeout(() => { wavesurfer[id].play() }, 700);
     
     //window['audio' + id].init()
     return wavesurfer[id];
