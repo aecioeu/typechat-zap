@@ -153,14 +153,7 @@ async function observe() {
 
   var gap = document.querySelector("typebot-standard").shadowRoot.querySelector(".gap-1")
 
-    if(gap && gapCount == 0){
-       gapCount++
-       digitando("digitando...") 
-       setTimeout(() => {
-        digitando("online") 
-        gapCount = 0
-       }, 2500);
-             }
+    if(gap && gapCount == 0){digitando("digitando...", 2000)}
 
   var targetNode = document.querySelector("typebot-standard").shadowRoot.querySelectorAll(`.bubble-typing`)
 
