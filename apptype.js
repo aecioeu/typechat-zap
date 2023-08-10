@@ -245,7 +245,7 @@ async function observe() {
  
     });
 
-    wavesurfer[id].on('timeupdate', (timeupdate) => {
+    /*wavesurfer[id].on('timeupdate', (timeupdate) => {
       //console.log(Math.round(timeupdate))
       //$(`.${id}-time`).html(fancyTimeFormat(timeupdate))
       var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`.${id}-time`)
@@ -263,7 +263,7 @@ async function observe() {
 
      setTimeout(() => { el.innerHTML = doubleCheckRead }, 450);
     
-    //window['audio' + id].init()
+    //window['audio' + id].init()*/
     return wavesurfer[id];
   };
 
