@@ -81,10 +81,8 @@ function digitando(text,timeout){
   var el = document.querySelector("typebot-standard").shadowRoot.querySelector("[id='status']")
   el.innerText = text
   if(timeout){
-  setTimeout(() => {
-    digitando("online") 
-    gapCount = 0
-   }, timeout);}
+  setTimeout(() => {digitando("online")}, timeout);}
+  setTimeout(() => { gapCount = 0;}, (timeout + 3000));
 }
 
 document.querySelector("typebot-standard").shadowRoot.querySelector("div").insertAdjacentHTML('afterbegin', headerWhatsapp());
