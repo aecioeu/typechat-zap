@@ -115,7 +115,7 @@ document.querySelector("typebot-standard").shadowRoot.querySelector("div").inser
 function messageTemplateWhitCheck(idMessage){
   var today = new Date();
 
-  return `<div class="timedelivered-message">${(today.getHours()<10?'0':'') + today.getHours()}:${(today.getMinutes()<10?'0':'') + today.getMinutes()}</div>
+  return `<div class="timedelivered-message-user">${(today.getHours()<10?'0':'') + today.getHours()}:${(today.getMinutes()<10?'0':'') + today.getMinutes()}</div>
           <div class="check-message" id="${idMessage}-checkMessage">${check}</div>`
 }
 function messageTemplate(idMessage){
