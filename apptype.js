@@ -106,7 +106,7 @@ function digitando(text,timeout){
 }
 
 document.querySelector("typebot-standard").shadowRoot.querySelector("div").insertAdjacentHTML('afterbegin', headerWhatsapp());
-
+/*
 function disToTop() {
   var el = document.querySelector("typebot-standard").shadowRoot.querySelector(".typebot-input")
       
@@ -119,7 +119,7 @@ function disToTop() {
 
 $(window).resize(function(){
   disToTop();
-});
+});*/
 
 
 
@@ -197,7 +197,7 @@ async function observe() {
  
   var send = document.querySelector(" typebot-standard").shadowRoot.querySelector(".typebot-input.w-full > button")
   if(send){
-    disToTop();
+   // disToTop();
   if($(send).attr("transformButton") == null) {
     //console.log("is null")
     send.setAttribute('transformButton', 'true');
