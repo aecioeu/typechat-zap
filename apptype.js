@@ -200,7 +200,7 @@ async function observe() {
   var send = document.querySelector(" typebot-standard").shadowRoot.querySelector(".typebot-input.w-full > button")
   if(send){
     disToTop();
-    elInput.focus();
+    $(elInput).focus();
   if($(send).attr("transformButton") == null) {
     //console.log("is null")
     send.setAttribute('transformButton', 'true');
