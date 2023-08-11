@@ -112,11 +112,16 @@ document.querySelector("typebot-standard").shadowRoot.querySelector("div").inser
 
 
 
-function messageTemplate(idMessage){
+function messageTemplateWhitCheck(idMessage){
   var today = new Date();
 
   return `<div class="timedelivered-message">${(today.getHours()<10?'0':'') + today.getHours()}:${(today.getMinutes()<10?'0':'') + today.getMinutes()}</div>
           <div class="check-message" id="${idMessage}-checkMessage">${check}</div>`
+}
+function messageTemplate(idMessage){
+  var today = new Date();
+
+  return `<div class="timedelivered-message">${(today.getHours()<10?'0':'') + today.getHours()}:${(today.getMinutes()<10?'0':'') + today.getMinutes()}</div>`
 }
 
 
@@ -202,7 +207,7 @@ async function observe() {
         let idMessage = randomId(8)
 
         setTimeout(() => {
-          entry.closest("div").closest("div").insertAdjacentHTML('beforeend', messageTemplate(idMessage));
+          entry.closest("div").closest("div").insertAdjacentHTML('beforeend', messageTemplateWhitCheck(idMessage));
           var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`[id='${idMessage}-checkMessage']`)
           Recived()
           
