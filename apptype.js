@@ -113,7 +113,7 @@ function disToTop() {
   var windowHeight = $(window).height(),
       resizeHeight = $(el).height(),
       difference = windowHeight - resizeHeight;
-      $(el).css("top", difference);
+      $(el).css("top", difference - 49);
       
 }
 
