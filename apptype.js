@@ -80,6 +80,11 @@ function headerWhatsapp() {
 
 var running = false;
 
+setTimeout(() => {
+
+  console.log("Executando: " + running)
+  
+}, 500);
 
 function digitando(text,timeout){
    //window.clearTimeout(running);
