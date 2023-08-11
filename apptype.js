@@ -187,11 +187,40 @@ async function observe() {
 
 
   var gap = document.querySelector("typebot-standard").shadowRoot.querySelector(".gap-1")
+  if(gap){digitando("digitando...", 2000)}
 
 
+  //user response
+  var userResponses = document.querySelector("typebot-standard").shadowRoot.querySelectorAll(`.typebot-guest-bubble`)
+  if(userResponses.length > 0){
+    targetNode.forEach((entry) => {
+      var data = $(entry).attr("data-testid")
+
+      if($(entry).attr("data-testid") == "guest-bubble"){
+        $(entry).removeAttr("data-testid")
+        let idMessage = randomId(8)
+
+        setTimeout(() => {
+          entry.closest("div").closest("div").insertAdjacentHTML('beforeend', messageTemplate(idMessage));
+          var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`[id='${idMessage}-checkMessage']`)
+          Recived()
+          
+          setTimeout(() => { el.innerHTML = doubleCheck }, 400);
+          setTimeout(() => { el.innerHTML = doubleCheckRead }, 800);
+          //digitando('online')
+
+        }, 600);
 
 
-    if(gap){digitando("digitando...", 2000)}
+      }
+
+    })
+
+    
+
+  }
+
+
 
   var targetNode = document.querySelector("typebot-standard").shadowRoot.querySelectorAll(`.bubble-typing`)
 
