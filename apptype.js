@@ -98,7 +98,7 @@ function digitando(text,timeout){
 
   }
     
-   }
+   
 
       //cancela o que estava agendado para ser executado
 
@@ -106,6 +106,21 @@ function digitando(text,timeout){
 }
 
 document.querySelector("typebot-standard").shadowRoot.querySelector("div").insertAdjacentHTML('afterbegin', headerWhatsapp());
+
+function disToTop() {
+  var el = document.querySelector("typebot-standard").shadowRoot.querySelector(".typebot-input")
+      
+  var windowHeight = $(window).height(),
+      resizeHeight = $(el).height(),
+      difference = windowHeight - resizeHeight;
+      $(el).css("top", difference);
+      
+}
+
+$(window).resize(function(){
+  disToTop();
+});
+
 
 
 
