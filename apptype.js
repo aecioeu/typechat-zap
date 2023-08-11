@@ -107,10 +107,10 @@ function digitando(text,timeout){
 
 document.querySelector("typebot-standard").shadowRoot.querySelector("div").insertAdjacentHTML('afterbegin', headerWhatsapp());
 
-var elInput = document.querySelector("typebot-standard").shadowRoot.querySelector(".typebot-input")
+
 
 function disToTop() {
-
+  var elInput = document.querySelector("typebot-standard").shadowRoot.querySelector(".typebot-input")
       
   var windowHeight = $(window).height(),
       resizeHeight = $(elInput).height(),
@@ -200,7 +200,7 @@ async function observe() {
   var send = document.querySelector(" typebot-standard").shadowRoot.querySelector(".typebot-input.w-full > button")
   if(send){
     disToTop();
-    $(elInput).focus();
+    //$(elInput).focus();
   if($(send).attr("transformButton") == null) {
     //console.log("is null")
     send.setAttribute('transformButton', 'true');
