@@ -91,14 +91,10 @@ function digitando(text,timeout){
     el.innerText = text
 
     if(timeout){ setTimeout(() => {
-      el.innerText = text
+      el.innerText = 'online'
       running = false
   }, timeout);
 
-  }else{
-    setTimeout(() => { 
-      el.innerText = "online"
-      running = false} , 1000);
   }
     
    }
@@ -192,7 +188,7 @@ async function observe() {
 
 
   var gap = document.querySelector("typebot-standard").shadowRoot.querySelector(".gap-1")
-  if(gap){digitando("digitando...", 2000)}
+  if(gap){digitando("digitando...")}
 
 
   //user response
@@ -213,7 +209,7 @@ async function observe() {
           
           setTimeout(() => { el.innerHTML = doubleCheck }, 400);
           setTimeout(() => { el.innerHTML = doubleCheckRead }, 800);
-          //digitando('online')
+          
 
         }, 600);
 
