@@ -78,27 +78,23 @@ function headerWhatsapp() {
 }
 
 
-var running = false;
-
-setInterval(() => {
-
-  console.log("Executando: " + running)
-  
-}, 500);
+var taskTimeout;
 
 function digitando(text,timeout){
+  clearTimeout(taskTimeout)
    //window.clearTimeout(running);
     
-   if(running == false){
-    running = true
+  // if(running == false){
+   // running = true
 
     var el = document.querySelector("typebot-standard").shadowRoot.querySelector("[id='status']")
     el.innerText = text
 
-    if(timeout){ setTimeout(() => {
+    if(timeout){ 
+      taskTimeout = setTimeout(() => {
       el.innerText = 'online'
-      running = false
   }, timeout);
+ // running = false
 
   }
     
