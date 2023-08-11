@@ -80,7 +80,7 @@ function headerWhatsapp() {
 
 var running = false;
 
-setTimeout(() => {
+setInterval(() => {
 
   console.log("Executando: " + running)
   
@@ -179,10 +179,13 @@ async function observe() {
       .substring(2, length + 2);
   };
 
-  var send = document.querySelector(" typebot-standard").shadowRoot.querySelector(".typebot-input.w-full > button")
+  var gap = document.querySelector("typebot-standard").shadowRoot.querySelector(".gap-1")
+  if(gap){digitando("digitando...", 3000)}
 
+
+ 
+  var send = document.querySelector(" typebot-standard").shadowRoot.querySelector(".typebot-input.w-full > button")
   if(send){
-    
   if($(send).attr("transformButton") == null) {
     //console.log("is null")
     send.setAttribute('transformButton', 'true');
@@ -192,8 +195,6 @@ async function observe() {
 }
 
 
-  var gap = document.querySelector("typebot-standard").shadowRoot.querySelector(".gap-1")
-  if(gap){digitando("digitando...")}
 
 
   //user response
