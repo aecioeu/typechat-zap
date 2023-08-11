@@ -193,7 +193,7 @@ async function observe() {
   //user response
   var userResponses = document.querySelector("typebot-standard").shadowRoot.querySelectorAll(`.typebot-guest-bubble`)
   if(userResponses.length > 0){
-    targetNode.forEach((entry) => {
+    userResponses.forEach((entry) => {
       var data = $(entry).attr("data-testid")
 
       if($(entry).attr("data-testid") == "guest-bubble"){
