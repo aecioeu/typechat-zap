@@ -91,7 +91,7 @@ function digitando(text,timeout){
     el.innerText = text
 
     if(timeout){ setTimeout(() => {
-      el.innerText = "online"
+      el.innerText = text
       running = false
   }, timeout);
 
@@ -195,6 +195,7 @@ async function observe() {
   if(userResponses.length > 0){
     userResponses.forEach((entry) => {
       var data = $(entry).attr("data-testid")
+      digitando('online', 0)
 
       if($(entry).attr("data-testid") == "guest-bubble"){
         $(entry).removeAttr("data-testid")
@@ -238,6 +239,7 @@ async function observe() {
 
         setTimeout(() => {
           entry.closest("div").closest("div").insertAdjacentHTML('beforeend', messageTemplate(idMessage));
+          digitando('online', 0)
          /* var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`[id='${idMessage}-checkMessage']`)
           Recived()
           
