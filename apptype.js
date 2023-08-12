@@ -137,9 +137,9 @@ function disToTop() {
       difference = windowHeight - resizeHeight;
 
      //coloca o elemto em posicao
-      $(elInput).css("top", difference);
+      //$(elInput).css("top", difference);
       // diminui o tamanho da janela para evitar o bug em iphone
-      document.querySelector("typebot-standard").shadowRoot.querySelector("div").style.height = windowHeight - userBar
+      //document.querySelector("typebot-standard").shadowRoot.querySelector("div").style.height = windowHeight - userBar
 
       var lastMessages = document.querySelector("typebot-standard").shadowRoot.querySelectorAll("div > div > div.flex.flex-col.w-full.min-w-0.gap-2")
       idMessage = lastMessages.length - 1
