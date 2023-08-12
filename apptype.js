@@ -139,8 +139,11 @@ function disToTop() {
      //coloca o elemto em posicao
       //$(elInput).css("top", difference);
       // diminui o tamanho da janela para evitar o bug em iphone
-      document.querySelector("typebot-standard").shadowRoot.querySelector("div").style.height = windowHeight
+      setTimeout(() => {
+        document.querySelector("typebot-standard").shadowRoot.querySelector("div").style.height = windowHeight
 
+      }, 2000);
+    
       /*var lastMessages = document.querySelector("typebot-standard").shadowRoot.querySelectorAll("div > div > div.flex.flex-col.w-full.min-w-0.gap-2")
       idMessage = lastMessages.length - 1
       lastMessages[idMessage].scrollIntoView();*/
