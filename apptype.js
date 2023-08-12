@@ -136,7 +136,7 @@ function disToTop() {
       resizeHeight = $(elInput).height(),
       difference = windowHeight - resizeHeight;
 
-      document.querySelector("#__next > div").style.height = windowHeight
+      document.querySelector("#__next > div").style.height = `${window.visualViewport.height}px`
 
      //coloca o elemto em posicao
       //$(elInput).css("top", difference);
