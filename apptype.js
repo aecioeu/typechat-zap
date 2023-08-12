@@ -110,12 +110,15 @@ document.querySelector("typebot-standard").shadowRoot.querySelector("div").inser
 
 
 function disToTop() {
+  
   var elInput = document.querySelector("typebot-standard").shadowRoot.querySelector(".typebot-input")
       
-  var windowHeight = $(window).height(),
+  var windowHeight = $(window).innerHeight,
       resizeHeight = $(elInput).height(),
       difference = windowHeight - resizeHeight;
       $(elInput).css("top", difference - 49);
+
+      //alert(windowHeight, resizeHeight, $(window).innerHeight)
       
 }
 
