@@ -116,8 +116,6 @@ setInterval(() => {
       alert("WIH:" + $(window).innerHeight)
 
       alert("WVP:" +window.visualViewport.height)  
-
-
   
 }, 5000);
 
@@ -141,7 +139,6 @@ function disToTop() {
       difference = windowHeight - resizeHeight;
       $(elInput).css("top", difference - 49);
 
-      
 }
 
 $(window).resize(function(){
