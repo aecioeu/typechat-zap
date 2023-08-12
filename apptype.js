@@ -138,7 +138,7 @@ function disToTop() {
 
       
       setTimeout(() => {
-        document.querySelector("#__next > div").style.height = `${window.visualViewport.height}px`
+        document.querySelector("#__next > div").style.height = `${window.visualViewport.height - resizeHeight}px`
         //document.querySelector("typebot-standard").shadowRoot.querySelector("div").style.height = `${window.visualViewport.height}px`
         $(elInput).css("top", difference);
 
