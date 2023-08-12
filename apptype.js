@@ -109,6 +109,23 @@ document.querySelector("typebot-standard").shadowRoot.querySelector("div").inser
 
 
 
+setInterval(() => {
+  
+      alert($(window).height(), $(window).innerHeight)
+  
+}, 5000);
+
+window.addEventListener('resize', () => {
+  // For the rare legacy browsers that don't support it
+  if (!window.visualViewport) {
+    return
+  }
+
+  console.log(window.visualViewport.height)
+})
+
+
+
 function disToTop() {
   
   var elInput = document.querySelector("typebot-standard").shadowRoot.querySelector(".typebot-input")
@@ -118,7 +135,6 @@ function disToTop() {
       difference = windowHeight - resizeHeight;
       $(elInput).css("top", difference - 49);
 
-      //alert(windowHeight, resizeHeight, $(window).innerHeight)
       
 }
 
