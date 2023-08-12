@@ -111,7 +111,13 @@ document.querySelector("typebot-standard").shadowRoot.querySelector("div").inser
 
 setInterval(() => {
   
-      alert($(window).height(), $(window).innerHeight)
+      alert("WH:" +$(window).height())
+
+      alert("WIH:" + $(window).innerHeight)
+
+      alert("WVP:" +window.visualViewport.height)  
+
+
   
 }, 5000);
 
