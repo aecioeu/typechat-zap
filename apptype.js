@@ -113,9 +113,9 @@ setInterval(() => {
   
       alert("WH:" +$(window).height())
 
-      alert("WIH:" + $(window).innerHeight)
+      alert("WIH:" + window.innerHeight)
 
-      alert("WVP:" +window.visualViewport.height)  
+      alert("WVP:" + window.visualViewport.height)  
   
 }, 5000);
 
