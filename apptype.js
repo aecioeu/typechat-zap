@@ -109,16 +109,13 @@ document.querySelector("typebot-standard").shadowRoot.querySelector("div").inser
 
 
 
-setInterval(() => {
+
+    
+
+      //alert("WVP:" + window.visualViewport.height)  
   
-      alert("WH:" +$(window).height())
 
-      alert("WIH:" + window.innerHeight)
-
-      alert("WVP:" + window.visualViewport.height)  
-  
-}, 5000);
-
+/*
 window.addEventListener('resize', () => {
   // For the rare legacy browsers that don't support it
   if (!window.visualViewport) {
@@ -126,7 +123,7 @@ window.addEventListener('resize', () => {
   }
 
   alert(window.visualViewport.height)
-})
+})*/
 
 
 
@@ -134,9 +131,10 @@ function disToTop() {
   
   var elInput = document.querySelector("typebot-standard").shadowRoot.querySelector(".typebot-input")
       
-  var windowHeight = $(window).innerHeight,
+  var windowHeight = window.visualViewport.height,
       resizeHeight = $(elInput).height(),
       difference = windowHeight - resizeHeight;
+
       $(elInput).css("top", difference - 49);
 
 }
