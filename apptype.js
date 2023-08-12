@@ -137,6 +137,7 @@ function disToTop() {
       difference = windowHeight - resizeHeight;
 
       document.querySelector("#__next > div").style.height = `${window.visualViewport.height}px`
+      document.querySelector("typebot-standard").shadowRoot.querySelector("div").style.height = `${window.visualViewport.height}px`
 
      //coloca o elemto em posicao
       //$(elInput).css("top", difference);
