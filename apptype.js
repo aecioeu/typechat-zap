@@ -121,7 +121,7 @@ window.addEventListener('resize', () => {
     return
   }
 
-  console.log(window.visualViewport.height)
+  alert(window.visualViewport.height)
 })
 
 
