@@ -139,7 +139,7 @@ function disToTop() {
      //coloca o elemto em posicao
       //$(elInput).css("top", difference);
       // diminui o tamanho da janela para evitar o bug em iphone
-      //document.querySelector("typebot-standard").shadowRoot.querySelector("div").style.height = windowHeight - userBar
+      document.querySelector("typebot-standard").shadowRoot.querySelector("div").style.height = windowHeight
 
       /*var lastMessages = document.querySelector("typebot-standard").shadowRoot.querySelectorAll("div > div > div.flex.flex-col.w-full.min-w-0.gap-2")
       idMessage = lastMessages.length - 1
@@ -232,7 +232,7 @@ async function observe() {
  
   var send = document.querySelector(" typebot-standard").shadowRoot.querySelector(".typebot-input.w-full > button")
   if(send){
-   // disToTop();
+    disToTop();
     //$(elInput).focus();
   if($(send).attr("transformButton") == null) {
     //console.log("is null")
