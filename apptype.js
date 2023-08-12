@@ -141,9 +141,9 @@ function disToTop() {
       // diminui o tamanho da janela para evitar o bug em iphone
       //document.querySelector("typebot-standard").shadowRoot.querySelector("div").style.height = windowHeight - userBar
 
-      var lastMessages = document.querySelector("typebot-standard").shadowRoot.querySelectorAll("div > div > div.flex.flex-col.w-full.min-w-0.gap-2")
+      /*var lastMessages = document.querySelector("typebot-standard").shadowRoot.querySelectorAll("div > div > div.flex.flex-col.w-full.min-w-0.gap-2")
       idMessage = lastMessages.length - 1
-      lastMessages[idMessage].scrollIntoView();
+      lastMessages[idMessage].scrollIntoView();*/
 
 }
 
