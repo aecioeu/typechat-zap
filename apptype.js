@@ -152,18 +152,23 @@ $(window).resize(function(){
 });
 
 
+function time(){
+  var today = new Date();
+  return `${(today.getHours()<10?'0':'') + today.getHours()}:${(today.getMinutes()<10?'0':'') + today.getMinutes()}`
+
+}
+
 
 
 function messageTemplateWhitCheck(idMessage){
-  var today = new Date();
-
-  return `<div class="timedelivered-message-user">${(today.getHours()<10?'0':'') + today.getHours()}:${(today.getMinutes()<10?'0':'') + today.getMinutes()}</div>
+ 
+  return `<div class="timedelivered-message-user">${time()}</div>
           <div class="check-message" id="${idMessage}-checkMessage">${check}</div>`
 }
 function messageTemplate(idMessage){
-  var today = new Date();
+ 
 
-  return `<div class="timedelivered-message">${(today.getHours()<10?'0':'') + today.getHours()}:${(today.getMinutes()<10?'0':'') + today.getMinutes()}</div>`
+  return `<div class="timedelivered-message"</div>`
 }
 
 
@@ -227,7 +232,7 @@ async function observe() {
  
   var send = document.querySelector(" typebot-standard").shadowRoot.querySelector(".typebot-input.w-full > button")
   if(send){
-    disToTop();
+   // disToTop();
     //$(elInput).focus();
   if($(send).attr("transformButton") == null) {
     //console.log("is null")
