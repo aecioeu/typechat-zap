@@ -142,9 +142,10 @@ function disToTop() {
         //document.querySelector("typebot-standard").shadowRoot.querySelector("div").style.height = `${window.visualViewport.height}px`
         $(elInput).css("top", difference);
 
-        var lastMessages = document.querySelector("typebot-standard").shadowRoot.querySelectorAll("div > div > div.flex.flex-col.w-full.min-w-0.gap-2")
+        /*var lastMessages = document.querySelector("typebot-standard").shadowRoot.querySelectorAll("div > div > div.flex.flex-col.w-full.min-w-0.gap-2")
         idMessage = lastMessages.length - 1
-        lastMessages[idMessage].scrollIntoView();
+        lastMessages[idMessage].scrollIntoView();*/
+        userBar.scrollIntoView();
      
       }, 1000);
    
