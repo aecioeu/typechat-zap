@@ -127,6 +127,8 @@ window.addEventListener('resize', () => {
 
 
 
+var originalViewPort;
+
 function disToTop() {
   
   var elInput = document.querySelector("typebot-standard").shadowRoot.querySelector(".typebot-input")
@@ -138,14 +140,14 @@ function disToTop() {
 
       
       setTimeout(() => {
-        document.querySelector("#__next > div").style.height = `${window.visualViewport.height - resizeHeight}px`
+        document.querySelector("#__next > div").style.height = `${window.visualViewport.height}px`
         //document.querySelector("typebot-standard").shadowRoot.querySelector("div").style.height = `${window.visualViewport.height}px`
         $(elInput).css("top", difference);
 
         /*var lastMessages = document.querySelector("typebot-standard").shadowRoot.querySelectorAll("div > div > div.flex.flex-col.w-full.min-w-0.gap-2")
         idMessage = lastMessages.length - 1
         lastMessages[idMessage].scrollIntoView();*/
-        userBar.scrollIntoView();
+        //userBar.scrollIntoView();
      
       }, 1000);
    
@@ -254,7 +256,10 @@ async function observe() {
   }
 }
 
+document.querySelector("typebot-standard").shadowRoot.querySelector(" button").onclick = function() {
 
+  alert("Enviado")
+};
 
 
   //user response
