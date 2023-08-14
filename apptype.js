@@ -234,9 +234,10 @@ async function observe() {
   if($(sendButtonChat).attr("transformButton") == null) {
     //console.log("is null")
    
-    sendButtonChat.style.width = "90px"
+    sendButtonChat.style.minWidth  = "90px"
     sendButtonChat.style.margin = "3px";
     sendButtonChat.style.padding = "6px 14px";
+    sendButtonChat.style.paddingBottom = "0x";
     sendButtonChat.style.boxShadow = "none"
 
     sendButtonChat.setAttribute('transformButton', 'true');
@@ -266,7 +267,7 @@ async function observe() {
         let idMessage = randomId(8)
 
         setTimeout(() => {
-          entry.closest("div").closest("div").closest("div").insertAdjacentHTML('beforeend', messageTemplateWhitCheck(idMessage));
+          entry.closest("div").closest("div").closest("span").insertAdjacentHTML('beforeend', messageTemplateWhitCheck(idMessage));
           var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`[id='${idMessage}-checkMessage']`)
           Recived()
           
