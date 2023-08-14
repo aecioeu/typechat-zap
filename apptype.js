@@ -235,9 +235,9 @@ async function observe() {
     //$(elInput).focus();
   if($(send).attr("transformButton") == null) {
     //console.log("is null")
-    send.style.margin = "3px 3px 3px 3px";
-    send.style.padding = "6px 14px";
-    send.style.boxShadow = "none"
+    send.style.margin = "3px !important";
+    send.style.padding = "6px 14px !important";
+    send.style.boxShadow = "none !important"
 
     send.setAttribute('transformButton', 'true');
     send.innerHTML = sendButton
