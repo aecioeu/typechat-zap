@@ -160,8 +160,8 @@ function time(){
 
 function messageTemplateWhitCheck(idMessage){
  
-  return `<div class="timedelivered-message-user">${time()}</div>
-          <div class="check-message" id="${idMessage}-checkMessage">${check}</div>`
+  return `<div class="message-status"><div class="timedelivered-message-user">${time()}</div>
+          <div class="check-message" id="${idMessage}-checkMessage">${check}</div></div>`
 }
 function messageTemplate(idMessage){
  
