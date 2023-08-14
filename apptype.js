@@ -183,7 +183,7 @@ function messageTemplateWhitCheck(idMessage){
 function messageTemplate(idMessage){
  
 
-  return `<div class="timedelivered-message"></div>`
+  return `<div class="timedelivered-message">${time()}</div>`
 }
 
 
