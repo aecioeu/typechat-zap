@@ -80,22 +80,20 @@ function headerWhatsapp() {
 
 var taskTimeout;
 
-function digitando(text,timeout){
-  //cancela outras coisas
-  //clearTimeout(taskTimeout)
-   //window.clearTimeout(running);
-    
-  // if(running == false){
-   // running = true
+function digitando(text){
 
     var el = document.querySelector("typebot-standard").shadowRoot.querySelector("[id='status']")
     el.innerText = text
 
-    if(timeout){ 
-      taskTimeout = setTimeout(() => {
-      el.innerText = 'online'
-  }, timeout);
- // running = false
+  }
+
+  function online(time){
+
+    setTimeout(() => {
+      var el = document.querySelector("typebot-standard").shadowRoot.querySelector("[id='status']")
+      el.innerText = "online"
+    }, time);
+   
 
   }
     
@@ -104,7 +102,6 @@ function digitando(text,timeout){
       //cancela o que estava agendado para ser executado
 
   //setTimeout(() => { gapCount = 0;}, (timeout + 3000));
-}
 
 document.querySelector("typebot-standard").shadowRoot.querySelector("div").insertAdjacentHTML('afterbegin', headerWhatsapp());
 
@@ -224,25 +221,25 @@ async function observe() {
   };
 
   var gap = document.querySelector("typebot-standard").shadowRoot.querySelector(".gap-1")
-  if(gap){digitando("digitando...", 3000)}
+  if(gap){digitando("digitando...")}
 
 
  
   var sendButtonChat = document.querySelector(" typebot-standard").shadowRoot.querySelector(".typebot-input.w-full > button")
   if(sendButtonChat){
-    digitando("online", 0)
+    digitando("online")
     disToTop();
 
     //$(elInput).focus();
   if($(sendButtonChat).attr("transformButton") == null) {
     //console.log("is null")
    
-    sendButtonChat.style.width = "90px !important"
-    sendButtonChat.style.margin = "3px 3px 3px 3px !important";
-    sendButtonChat.style.padding = "6px 14px !important";
-    sendButtonChat.style.boxShadow = "none !important"
+    sendButtonChat.style.width = "90px"
+    sendButtonChat.style.margin = "3px";
+    sendButtonChat.style.padding = "6px 14px";
+    sendButtonChat.style.boxShadow = "none"
 
-    sesendButtonChatnd.setAttribute('transformButton', 'true');
+    sesendButtonChatn.setAttribute('transformButton', 'true');
     sendButtonChat.innerHTML = sendButton
 
     document.querySelector("typebot-standard").shadowRoot.querySelector(" button").onclick = function() {
