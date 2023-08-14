@@ -164,9 +164,6 @@ $(window).resize(function(){
 });
 
 
-var formSendButton = document.querySelector("typebot-standard").shadowRoot.querySelector(" button")
-
-
 
 
 
@@ -257,15 +254,12 @@ async function observe() {
     send.setAttribute('transformButton', 'true');
     send.innerHTML = sendButton
 
-
-    if(formSendButton){
-      formSendButton.onclick = function() {
+    document.querySelector("typebot-standard").shadowRoot.querySelector(" button").onclick = function() {
         //volta o tamanho do displayport
-      
+        disToTop();
         alert("Enviado")
       };
     
-    }
 
   }
 }
