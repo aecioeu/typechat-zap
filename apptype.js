@@ -147,7 +147,7 @@ function disToTop() {
         lastMessages[idMessage].scrollIntoView();*/
         userBar.scrollIntoView();
      
-      }, 1000);
+      }, 0);
    
       //coloca o elemto em posicao
       // diminui o tamanho da janela para evitar o bug em iphone
