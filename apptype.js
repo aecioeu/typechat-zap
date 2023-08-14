@@ -274,7 +274,7 @@ async function observe() {
         let idMessage = randomId(8)
 
         setTimeout(() => {
-          entry.closest("div").closest("div").closest("span").insertAdjacentHTML('beforeend', messageTemplateWhitCheck(idMessage));
+          entry.insertAdjacentHTML('beforeend', messageTemplateWhitCheck(idMessage));
           var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`[id='${idMessage}-checkMessage']`)
           Recived()
           
