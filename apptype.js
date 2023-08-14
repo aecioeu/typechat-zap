@@ -282,7 +282,7 @@ async function observe() {
           setTimeout(() => { el.innerHTML = doubleCheckRead }, 800);
           
 
-        }, 600);
+        }, 0);
 
 
       }
