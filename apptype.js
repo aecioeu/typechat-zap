@@ -107,6 +107,7 @@ document.querySelector("typebot-standard").shadowRoot.querySelector("div").inser
 
 
 
+
 function disToTop() {
   
   var elInput = document.querySelector("typebot-standard").shadowRoot.querySelector(".typebot-input")
@@ -141,6 +142,8 @@ function disToTop() {
 
 $(window).resize(function(){
   disToTop();
+  document.querySelector("#__next > div").style.height = `${window.visualViewport.height}px`
+
 });
 
 
@@ -165,6 +168,8 @@ function messageTemplate(idMessage){
 
   return `<div class="timedelivered-message">${time()}</div>`
 }
+
+
 
 
 $(document).on('click', '.speed', async function(){ 
