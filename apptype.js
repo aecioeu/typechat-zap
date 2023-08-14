@@ -232,12 +232,13 @@ async function observe() {
   if(send){
     digitando("online", 0)
     disToTop();
-    //$(elInput).focus();
-  if($(send).attr("transformButton") == null) {
-    //console.log("is null")
     send.style.margin = "3px !important";
     send.style.padding = "6px 14px !important";
     send.style.boxShadow = "none !important"
+    //$(elInput).focus();
+  if($(send).attr("transformButton") == null) {
+    //console.log("is null")
+   
 
     send.setAttribute('transformButton', 'true');
     send.innerHTML = sendButton
