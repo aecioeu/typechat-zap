@@ -241,7 +241,9 @@ async function observe() {
    
     sendButtonChat.style.minWidth  = "90px"
     sendButtonChat.style.margin = "3px";
-    sendButtonChat.style.padding = "6px 14px";
+    sendButtonChat.style.paddingTop = "6px";
+    sendButtonChat.style.paddingLeft = "14px";
+    sendButtonChat.style.paddingRight = "14px";
     sendButtonChat.style.paddingBottom = "0px";
     sendButtonChat.style.boxShadow = "none"
 
