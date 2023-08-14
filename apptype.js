@@ -147,7 +147,7 @@ function disToTop() {
         lastMessages[idMessage].scrollIntoView();*/
         userBar.scrollIntoView();
      
-      }, 0);
+      }, 100);
    
       //coloca o elemto em posicao
       // diminui o tamanho da janela para evitar o bug em iphone
@@ -165,14 +165,7 @@ $(window).resize(function(){
 
 
 var formSendButton = document.querySelector("typebot-standard").shadowRoot.querySelector(" button")
-if(formSendButton){
-  formSendButton.onclick = function() {
-    //volta o tamanho do displayport
-  
-    alert("Enviado")
-  };
 
-}
 
 
 
@@ -263,6 +256,16 @@ async function observe() {
     //console.log("is null")
     send.setAttribute('transformButton', 'true');
     send.innerHTML = sendButton
+
+
+    if(formSendButton){
+      formSendButton.onclick = function() {
+        //volta o tamanho do displayport
+      
+        alert("Enviado")
+      };
+    
+    }
 
   }
 }
