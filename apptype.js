@@ -82,7 +82,7 @@ var taskTimeout;
 
 function digitando(text,timeout){
   //cancela outras coisas
-  clearTimeout(taskTimeout)
+  //clearTimeout(taskTimeout)
    //window.clearTimeout(running);
     
   // if(running == false){
@@ -232,13 +232,15 @@ async function observe() {
   if(send){
     digitando("online", 0)
     disToTop();
-    send.style.margin = "3px !important";
-    send.style.padding = "6px 14px !important";
-    send.style.boxShadow = "none !important"
+
     //$(elInput).focus();
   if($(send).attr("transformButton") == null) {
     //console.log("is null")
    
+    send.style.width = "90px !important"
+    send.style.margin = "3px 3px 3px 3px !important";
+    send.style.padding = "6px 14px !important";
+    send.style.boxShadow = "none !important"
 
     send.setAttribute('transformButton', 'true');
     send.innerHTML = sendButton
