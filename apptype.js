@@ -228,22 +228,22 @@ async function observe() {
 
 
  
-  var send = document.querySelector(" typebot-standard").shadowRoot.querySelector(".typebot-input.w-full > button")
-  if(send){
+  var sendButtonChat = document.querySelector(" typebot-standard").shadowRoot.querySelector(".typebot-input.w-full > button")
+  if(sendButtonChat){
     digitando("online", 0)
     disToTop();
 
     //$(elInput).focus();
-  if($(send).attr("transformButton") == null) {
+  if($(sendButtonChat).attr("transformButton") == null) {
     //console.log("is null")
    
-    send.style.width = "90px !important"
-    send.style.margin = "3px 3px 3px 3px !important";
-    send.style.padding = "6px 14px !important";
-    send.style.boxShadow = "none !important"
+    sendButtonChat.style.width = "90px !important"
+    sendButtonChat.style.margin = "3px 3px 3px 3px !important";
+    sendButtonChat.style.padding = "6px 14px !important";
+    sendButtonChat.style.boxShadow = "none !important"
 
-    send.setAttribute('transformButton', 'true');
-    send.innerHTML = sendButton
+    sesendButtonChatnd.setAttribute('transformButton', 'true');
+    sendButtonChat.innerHTML = sendButton
 
     document.querySelector("typebot-standard").shadowRoot.querySelector(" button").onclick = function() {
         //volta o tamanho do displayport
