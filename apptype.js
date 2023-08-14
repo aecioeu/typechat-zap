@@ -239,7 +239,7 @@ async function observe() {
     sendButtonChat.style.padding = "6px 14px";
     sendButtonChat.style.boxShadow = "none"
 
-    sesendButtonChatn.setAttribute('transformButton', 'true');
+    sendButtonChat.setAttribute('transformButton', 'true');
     sendButtonChat.innerHTML = sendButton
 
     document.querySelector("typebot-standard").shadowRoot.querySelector(" button").onclick = function() {
@@ -266,7 +266,7 @@ async function observe() {
         let idMessage = randomId(8)
 
         setTimeout(() => {
-          entry.closest("div").closest("div").insertAdjacentHTML('beforeend', messageTemplateWhitCheck(idMessage));
+          entry.closest("div").closest("div").closest("div").insertAdjacentHTML('beforeend', messageTemplateWhitCheck(idMessage));
           var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`[id='${idMessage}-checkMessage']`)
           Recived()
           
