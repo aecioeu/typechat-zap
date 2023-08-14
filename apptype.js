@@ -244,8 +244,9 @@ async function observe() {
 
     document.querySelector("typebot-standard").shadowRoot.querySelector(" button").onclick = function() {
         //volta o tamanho do displayport
-        disToTop();
-        alert("Enviado")
+        //disToTop();
+        //alert("Enviado")
+        document.querySelector("#__next > div").style.height = `${window.visualViewport.height}px`
       };
     
 
