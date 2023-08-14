@@ -166,7 +166,7 @@ function messageTemplateWhitCheck(idMessage){
 function messageTemplate(idMessage){
  
 
-  return `<div class="timedelivered-message">${time()}</div>`
+  return `<div class="message-status-sender"><div class="timedelivered-message">${time()}</div></div>`
 }
 
 
@@ -310,7 +310,7 @@ async function observe() {
         let idMessage = randomId(8)
 
         setTimeout(() => {
-          entry.closest("div").closest("div").insertAdjacentHTML('beforeend', messageTemplate(idMessage));
+          entry.insertAdjacentHTML('beforeend', messageTemplate(idMessage));
           //digitando('online', 0)
          /* var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`[id='${idMessage}-checkMessage']`)
           Recived()
