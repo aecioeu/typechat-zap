@@ -81,6 +81,7 @@ function headerWhatsapp() {
 var taskTimeout;
 
 function digitando(text,timeout){
+  //cancela outras coisas
   clearTimeout(taskTimeout)
    //window.clearTimeout(running);
     
@@ -109,24 +110,6 @@ document.querySelector("typebot-standard").shadowRoot.querySelector("div").inser
 
 
 
-
-    
-
-//alert("WVP:" + window.visualViewport.height)  
-  
-
-/*
-window.addEventListener('resize', () => {
-  // For the rare legacy browsers that don't support it
-  if (!window.visualViewport) {
-    return
-  }
-
-  alert(window.visualViewport.height)
-})*/
-
-
-
 function disToTop() {
   
   var elInput = document.querySelector("typebot-standard").shadowRoot.querySelector(".typebot-input")
@@ -147,7 +130,7 @@ function disToTop() {
         lastMessages[idMessage].scrollIntoView();*/
         userBar.scrollIntoView();
      
-      }, 0);
+      }, 70);
    
       //coloca o elemto em posicao
       // diminui o tamanho da janela para evitar o bug em iphone
@@ -247,6 +230,7 @@ async function observe() {
  
   var send = document.querySelector(" typebot-standard").shadowRoot.querySelector(".typebot-input.w-full > button")
   if(send){
+    digitando("online", 0)
     disToTop();
     //$(elInput).focus();
   if($(send).attr("transformButton") == null) {
@@ -265,14 +249,12 @@ async function observe() {
 }
 
 
-
-
   //user response
   var userResponses = document.querySelector("typebot-standard").shadowRoot.querySelectorAll(`.typebot-guest-bubble`)
   if(userResponses.length > 0){
     userResponses.forEach((entry) => {
       var data = $(entry).attr("data-testid")
-      digitando('online', 0)
+      
 
       if($(entry).attr("data-testid") == "guest-bubble"){
         $(entry).removeAttr("data-testid")
@@ -316,7 +298,7 @@ async function observe() {
 
         setTimeout(() => {
           entry.closest("div").closest("div").insertAdjacentHTML('beforeend', messageTemplate(idMessage));
-          digitando('online', 0)
+          //digitando('online', 0)
          /* var el = document.querySelector("typebot-standard").shadowRoot.querySelector(`[id='${idMessage}-checkMessage']`)
           Recived()
           
